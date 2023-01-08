@@ -1,0 +1,46 @@
+---
+import Card from './Card.astro';
+const featuresData = [
+  {
+    title: 'this is a place holder card title',
+    body: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam eum quaerat impedit praesentium dolores esse tempora id, illo rerum atque eveniet vel, temporibus adipisci voluptate odit eligendi sequi. Recusandae, quisquam.',
+  },
+  {
+    title: 'this is a place holder card title',
+    body: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam eum quaerat impedit praesentium dolores esse tempora id, illo rerum atque eveniet vel, temporibus adipisci voluptate odit eligendi sequi. Recusandae, quisquam.',
+  },
+  {
+    title: 'this is a place holder card title',
+    body: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam eum quaerat impedit praesentium dolores esse tempora id, illo rerum atque eveniet vel, temporibus adipisci voluptate odit eligendi sequi. Recusandae, quisquam.',
+  },
+];
+---
+
+<section class="features">
+  <div class="container">
+    {
+      featuresData.map((item) => (
+        <Card>
+          <h3>{item.title}</h3>
+          <p>{item.body}</p>
+        </Card>
+      ))
+    }
+  </div>
+</section>
+
+<style>
+  .features .container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+    padding: 0 20px;
+    margin: 30px auto;
+  }
+
+  @media (max-width: 500px) {
+    .features .container {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
