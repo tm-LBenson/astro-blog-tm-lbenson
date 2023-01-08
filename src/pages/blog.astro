@@ -1,0 +1,22 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Card from '../components/Card.astro';
+import Showcase from '../components/Showcase.astro';
+const posts = await Astro.glob('../blogs/*.md');
+---
+
+<Layout title="Lewis Benson's Blog">
+  <Showcase heading="Lewis Benson" />
+  <section class="page-content">
+    <div class="container">
+      {
+        posts.map((blog) => (
+          <Card>
+            <h3>{blog.frontmatter.title}</h3>
+            <p>{blog.frontmatter.excerpt}</p>
+          </Card>
+        ))
+      }
+    </div>
+  </section>
+</Layout>
