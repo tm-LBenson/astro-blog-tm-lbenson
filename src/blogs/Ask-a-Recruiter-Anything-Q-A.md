@@ -1,6 +1,6 @@
 ---
 title: 'Asking the Right Questions: Insights from a Recruiter Event'
-slug: 'Asking the Right Questions: Insights from a Recruiter Event'
+slug: An-Introduction-to-My-Code-Challenge-Series
 excerpt: As job seekers, we often find ourselves wondering how to navigate the job market and make a strong impression on recruiters. It can be intimidating to approach recruiters and ask for opportunities, but building connections and networking is a crucial step in finding our dream job...
 date: 2023-01-07
 author: Lewis Benson

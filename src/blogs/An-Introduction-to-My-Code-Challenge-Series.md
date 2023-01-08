@@ -1,6 +1,6 @@
 ---
 title: An Introduction to My Code Challenge Series
-slug: An Introduction to My Code Challenge Series
+slug: An-Introduction-to-My-Code-Challenge-Series
 excerpt: As a beginner in the world of web development, I have been learning the ins and outs of various programming languages and concepts. One of the ways I have been doing this is by completing daily code challenges that cover a wide range of topics...
 date: 2023-01-03
 author: Lewis Benson

@@ -1,6 +1,6 @@
 ---
 title: An Introduction to Insertion Sort
-slug: An Introduction to Insertion Sort
+slug: An-Introduction-to-Insertion-Sort-When-to-Use-it-and-How-it-Works
 excerpt: Insertion Sort is a common sorting algorithm that can be used to arrange an array of elements in ascending or descending order. It works by iterating through the array and inserting each element into its correct position among the elements to its left that are already sorted...
 date: 2023-01-02
 author: Lewis Benson

@@ -1,6 +1,6 @@
 ---
 title: My Second Week at Code Fellows
-slug: My Second Week at Code Fellows
+slug: My-Second-Week-at-Code-Fellows
 excerpt: Welcome back to my ongoing series about my experiences at Code Fellows, a coding bootcamp in Seattle that I took remotely. In this post, I'll be sharing my experiences during my second week at the bootcamp...
 date: 2023-01-05
 author: Lewis Benson

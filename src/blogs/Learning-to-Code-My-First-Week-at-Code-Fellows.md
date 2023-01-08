@@ -1,7 +1,7 @@
 ---
 title: Learning to Code My First Week at Code Fellows
 date: 2023-01-01
-slug: Learning to Code My First Week at Code Fellows
+slug: Learning-to-Code-My-First-Week-at-Code-Fellows
 excerpt: Welcome to my blog! In this post, I'll be sharing my experience during my first week at Code Fellows, a coding bootcamp in Seattle that I took remotely. Before starting at Code Fellows, I had already been learning to code on my own through an online course on Udemy...
 author: Lewis Benson
 category: Code Fellows

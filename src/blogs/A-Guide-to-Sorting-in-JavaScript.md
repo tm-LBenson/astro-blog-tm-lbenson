@@ -1,6 +1,6 @@
 ---
 title: Mastering the Art of Sorting
-slug: Mastering the Art of Sorting
+slug: A-Guide-to-Sorting-in-JavaScript
 excerpt: Are you ready to dive into the world of sorting algorithms? Great! Sorting data is an important task in computer science and is applicable to a wide range of problems. Whether you're trying to organize a large dataset or simply want to display a list of items in a specific order...
 date: 2023-01-04
 author: Lewis Benson

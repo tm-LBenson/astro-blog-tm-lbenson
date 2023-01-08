@@ -1,7 +1,7 @@
 ---
 title: Unleashing the Power of Hash Maps
 date: 2023-01-06
-slug: Unleashing the Power of Hash Maps
+slug: Unleashing-the-Power-of-Hash-Maps
 excerpt: As a developer, it's important to have a strong understanding of data structures and algorithms. One data structure that is often discussed in technical interviews and is highly useful in real-world applications is the hash map...
 category: Data Structures
 author: Lewis Benson

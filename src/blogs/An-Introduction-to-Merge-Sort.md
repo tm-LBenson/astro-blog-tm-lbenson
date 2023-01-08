@@ -1,6 +1,6 @@
 ---
 title: An Introduction to Merge Sort
-slug: An Introduction to Merge Sort
+slug: An-Introduction-to-Merge-Sort
 excerpt: Merge Sort is a divide and conquer sorting algorithm that works by recursively dividing an array into smaller pieces, sorting those pieces, and then merging them back together in a sorted order. It is a stable sort, meaning that it preserves the relative order of elements with equal values...
 date: 2023-01-03
 category: Data Structures
