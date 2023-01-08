@@ -1,9 +1,44 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Showcase from '../components/Showcase.astro';
+import Features from '../components/Features.astro';
+import Tabs from '../components/Tabs.astro';
+
+const headings = ['SKILLS', 'HOBBIES', 'FAVORITE COLOR'];
+const content = [
+  'THESE ARE MY SKILLS',
+  'THESE ARE MY HOBIES',
+  'THESE ARE MY COLORS',
+];
 ---
-<Layout>
-	<h1>Hello World</h1>
-<ul>
-	<li></li>
-</ul>
+
+<Layout title="TM-LBenson">
+  <Showcase showExtra={true} />
+  <Features />
+  <section class="page-content">
+    <div class="container">
+      <h2>Things That Interest Me</h2>
+      <p>
+        Below are a few things you can click through and this is some place
+        holder text for later. Lorem ipsum dolor sit amet consectetur
+        adipisicing elit. Placeat dignissimos ipsa, beatae magni repellat,
+        minima voluptatem fuga est distinctio facilis maxime esse quia dolorem,
+        quaerat molestiae sapiente aliquid dicta nulla.
+      </p>
+      <Tabs
+        headings={headings}
+        contents={content}
+      />
+
+      <h3>How to Contact Me</h3>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta ipsum
+        deserunt inventore ut voluptate, officia maiores repellat tenetur
+        praesentium omnis est ex tempora a necessitatibus reiciendis at et
+        dignissimos. Ipsam eius consequuntur cupiditate aperiam porro, esse
+        laborum impedit nesciunt ut voluptatum assumenda aspernatur libero iusto
+        error molestias dolorum, necessitatibus labore?
+      </p>
+    </div>
+  </section>
 </Layout>
