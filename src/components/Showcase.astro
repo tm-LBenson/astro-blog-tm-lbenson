@@ -1,0 +1,98 @@
+---
+export interface Props {
+  heading?: string;
+  text?: string;
+  showExtra?: boolean;
+}
+
+const {
+  showExtra = false, // This is the message displayed in the blog, its not advised to change
+  heading = 'Lewis Benson',
+  text = 'Hello. I am a web developer.',
+} = Astro.props as Props;
+---
+
+<section class="showcase">
+  <div class="showcase-text">
+    <h1>{heading}</h1>
+    <p>
+      {text}
+    </p>
+  </div>
+
+  {
+    showExtra && (
+      <>
+        <div class="showcase-img">
+          <div class="logos">dd</div>
+
+          <div class="logos-small">dd</div>
+        </div>
+
+        <p class="showcase-demo">
+          <small>This is where you can learn about what I do.</small>
+        </p>
+      </>
+    )
+  }
+</section>
+
+<style>
+  .showcase {
+    height: auto;
+    background-color: var(--color-secondary);
+    background-image: linear-gradient(
+      to bottom,
+      var(--color-primary),
+      rgb(15 23 42 / 0)
+    );
+    padding: 30px;
+  }
+
+  .showcase-blog {
+    min-height: 300px;
+  }
+
+  .showcase-text {
+    max-width: 500px;
+    color: #fff;
+    text-align: center;
+    margin: 50px auto;
+  }
+
+  .showcase h1 {
+    font-size: 50px;
+    color: #fff;
+    margin-bottom: 20px;
+  }
+
+  .showcase p {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+
+  .showcase-img {
+    height: 70px;
+    margin: auto;
+    width: 80%;
+    border-radius: 6px;
+    background-color: #fff;
+    text-align: center;
+  }
+
+  .showcase-demo {
+    color: #fff;
+    text-align: center;
+    font-weight: 300;
+  }
+
+  @media (max-width: 960px) {
+    .logos-small {
+      display: block;
+      margin: auto;
+    }
+    .logos {
+      display: none;
+    }
+  }
+</style>
