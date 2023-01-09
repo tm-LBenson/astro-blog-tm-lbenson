@@ -2,6 +2,8 @@
 import Header from '../components/Header.astro';
 import '../styles/global.css';
 import Footer from '../components/Footer.astro';
+import DarkMode from '../components/DarkMode.astro';
+import { log } from 'astro/dist/core/logger/core';
 export interface Props {
   title?: string;
 }
@@ -36,8 +38,10 @@ const { title = 'TM-LBenson' } = Astro.props as Props;
     />
     <title>{title}</title>
   </head>
+
   <body>
     <Header />
+    <DarkMode />
     <slot />
     <Footer />
   </body>

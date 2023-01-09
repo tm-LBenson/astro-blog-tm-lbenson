@@ -85,7 +85,18 @@ h3 {
   font-size: 25px;
 }
 
+body.dark-mode {
+  background-color: rgb(37, 19, 19);
+  color: rgb(151, 146, 146);
+}
 
+body.dark-mode .card {
+  background-color: #333;
+}
+
+body.dark-mode .svg {
+  color: rgb(151, 146, 146);
+}
 
 @media (max-width: 500px) {
   h1,

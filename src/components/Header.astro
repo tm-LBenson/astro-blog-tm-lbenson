@@ -1,5 +1,6 @@
 ---
 import logo from '../images/logo.png';
+import DarkModeToggle from './icons/DarkModeToggle.astro';
 ---
 
 <header class="header">
@@ -17,12 +18,16 @@ import logo from '../images/logo.png';
         <li><a href="/">Home</a></li>
         <li><a href="/about">About</a></li>
         <li><a href="/blog">Blog</a></li>
+        <li id="toggle-button" class="link"><DarkModeToggle /></li>
       </ul>
     </nav>
   </div>
 </header>
 
 <style>
+  .link {
+    cursor: pointer;
+  }
   .header {
     height: 70px;
     background: var(--color-primary);
