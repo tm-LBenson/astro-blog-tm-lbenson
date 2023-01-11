@@ -1,5 +1,6 @@
 ---
 import logo from '../images/logo.png';
+import DarkMode from './DarkMode.astro';
 import DarkModeToggle from './icons/DarkModeToggle.astro';
 ---
 
@@ -18,7 +19,13 @@ import DarkModeToggle from './icons/DarkModeToggle.astro';
         <li><a href="/">Home</a></li>
         <li><a href="/about">About</a></li>
         <li><a href="/blog">Blog</a></li>
-        <li id="toggle-button" class="link"><DarkModeToggle /></li>
+        <li
+          id="toggle-button"
+          class="link"
+        >
+          <DarkMode />
+          <DarkModeToggle />
+        </li>
       </ul>
     </nav>
   </div>
@@ -30,7 +37,7 @@ import DarkModeToggle from './icons/DarkModeToggle.astro';
   }
   .header {
     height: 70px;
-    background: var(--color-primary);
+    background: var(--color-secondary);
   }
 
   .header .container {

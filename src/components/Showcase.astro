@@ -1,4 +1,5 @@
 ---
+import { TypedJS } from 'wc-typed-js';
 export interface Props {
   heading?: string;
   text?: string;
@@ -12,6 +13,7 @@ const {
 } = Astro.props as Props;
 ---
 
+<script type="module" src="dist/main.js" crossorigin></script>
 <section class="showcase">
   <div class="showcase-text">
     <h1>{heading}</h1>

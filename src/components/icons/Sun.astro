@@ -9,8 +9,8 @@
     preserveAspectRatio="xMidYMid meet"
     viewBox="0 0 24 24"
     ><g
-      fill="none"
-      stroke="currentColor"
+      fill="yellow"
+      stroke="yellow"
       stroke-linecap="round"
       stroke-width="2"
       ><circle
@@ -70,50 +70,20 @@
     position: absolute;
     top: 50%;
     right: 20%;
-    opacity: 0;
   }
 
   @keyframes move-sun {
     0% {
-      opacity: 0;
+      opacity: 1;
       transform: translateY(-50%);
     }
-    10% {
-      opacity: 1;
-      transform: translateY(-100%);
-    }
-    20% {
-      opacity: 1;
-      transform: translateY(-180%);
-    }
-    30% {
-      transform: translateY(-200%);
-    }
-    40% {
-      transform: translateY(-220%);
-    }
-    50% {
-      transform: translateY(-240%);
-    }
-    60% {
-      transform: translateY(-260%);
-    }
-    70% {
-      transform: translateY(-280%);
-    }
-    80% {
-      transform: translateY(-300%);
-    }
-    90% {
-      transform: translateY(-320%);
-    }
+
     100% {
-      opacity: 1;
       transform: translateY(-340%);
     }
   }
 
   .move-sun {
-    animation: move-moon 0.7s cubic-bezier(0.33, 0.37, 1, 1.63) forwards;
+    animation: move-moon 1.7s ease-in-out forwards;
   }
 </style>
