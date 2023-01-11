@@ -1,0 +1,15 @@
+/** @format */
+
+.features .container {
+  width: 100vw;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  margin: auto;
+  background-color: blue;
+}
+.blog-card {
+  width: 25%;
+}

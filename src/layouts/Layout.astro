@@ -1,9 +1,8 @@
 ---
-import Header from '../components/Header.astro';
+import Header from '../components/Header.jsx';
 import '../styles/global.css';
 import Footer from '../components/Footer.astro';
 
-import { log } from 'astro/dist/core/logger/core';
 export interface Props {
   title?: string;
 }
@@ -40,9 +39,8 @@ const { title = 'TM-LBenson' } = Astro.props as Props;
   </head>
 
   <body>
-    <Header />
+    <Header client:load />
     <slot />
-    
     <Footer />
   </body>
 </html>

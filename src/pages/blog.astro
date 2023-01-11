@@ -2,27 +2,58 @@
 import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.astro';
 import Showcase from '../components/Showcase.astro';
+
 const posts = await Astro.glob('../blogs/*.md');
 ---
 
 <Layout title="Lewis Benson's Blog">
   <Showcase heading="Lewis Benson" />
   <section class="page-content">
-    <div class="container">
+    <div class="container blog-posts">
       {
         posts.map((blog) => (
-          <Card>
-            <h3>{blog.frontmatter.title}</h3>
-            <p>{blog.frontmatter.excerpt}</p>
-            <a
-              class="btn"
-              href={`/${blog.frontmatter.slug}`}
-            >
-              Read More
-            </a>
-          </Card>
+          <div class="card-blog">
+            <Card>
+              <h3>{blog.frontmatter.title}</h3>
+              <p>{blog.frontmatter.excerpt}</p>
+              <a
+                class="btn"
+                href={`/${blog.frontmatter.slug}`}
+              >
+                Read More
+              </a>
+            </Card>
+          </div>
         ))
       }
     </div>
   </section>
 </Layout>
+
+<style>
+
+  .page-content .blog-posts {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+    padding: 0 20px;
+    margin: auto;
+    min-height: 100vh;
+  }
+
+  .card-blog .card {
+    min-width: 25rem;
+    max-width: 25rem;
+    height: 35rem;
+  }
+
+  @media (max-width: 1200px) {
+    .page-content .blog-posts {
+      grid-template-columns: 1fr;
+      margin: auto;
+    }
+    .page-content {
+      display: flex;
+    }
+  }
+</style>
