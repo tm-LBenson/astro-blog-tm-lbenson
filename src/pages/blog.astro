@@ -1,13 +1,13 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.astro';
-import Showcase from '../components/Showcase.astro';
+import Showcase from '../components/Showcase.jsx';
 
 const posts = await Astro.glob('../blogs/*.md');
 ---
 
 <Layout title="Lewis Benson's Blog">
-  <Showcase heading="Lewis Benson" />
+  <Showcase client:load />
   <section class="page-content">
     <div class="container blog-posts">
       {

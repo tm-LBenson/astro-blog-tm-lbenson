@@ -1,0 +1,53 @@
+/** @format */
+
+.showcase {
+  height: auto;
+  background: var(--color-third);
+  padding: 30px;
+}
+
+.showcase-blog {
+  min-height: 300px;
+}
+
+.showcase-text {
+  max-width: 500px;
+  color: #fff;
+  text-align: center;
+  margin: 50px auto;
+}
+
+.showcase h1 {
+  font-size: 50px;
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+.showcase p {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.showcase-img {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: 20px;
+  height: 10rem;
+  margin: auto;
+  width: 25rem;
+  border-radius: 6px;
+  background-color: #fff;
+  text-align: center;
+}
+
+
+
+.showcase-demo {
+  color: #fff;
+  text-align: center;
+  font-weight: 300;
+}
+
+@media (max-width: 960px) {
+}

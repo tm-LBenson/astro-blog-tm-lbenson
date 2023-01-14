@@ -3,72 +3,75 @@ import Layout from '../layouts/Layout.astro';
 import logos from '../images/deploy-logos.png';
 import logosSmall from '../images/deploy-logos.png';
 import Card from '../components/Card.astro';
-import Showcase from '../components/Showcase.astro';
+import Showcase from '../components/Showcase.jsx';
 ---
 
 <Layout title="About Lewis Benson">
-  <Showcase heading="Lewis Benson" />
+  <Showcase client:load />
   <section class="page-content">
     <div class="container">
       <Card>
         <h2>About Lewis Benson</h2>
         <p>
-          Welcome to my website! I am a web developer with a passion for solving
-          problems and a love for music. My skillset includes the MERN stack and
-          I am proficient in pair programming and Jest testing. I have over a
-          year of experience in the development industry, working on a variety
-          of projects, including building a CRUD application using the MERN
-          stack and collaborating on a game based on D&D.
+          Welcome to my personal website! I am a web developer with a passion
+          for solving problems and a love for music. My skill set includes
+          proficiency in the MERN stack, pair programming, and Jest testing. I
+          have over a year of experience in the development industry, working on
+          a variety of projects such as building a CRUD application using the
+          MERN stack and collaborating on a game based on D&D.
         </p>
-        <h3>My Skills and Experience</h3>
+        <h3>Professional Skills and Experience</h3>
         <p>
-          My military service as a heavy equipment construction supervisor has
-          given me strong leadership and problem-solving skills. I am committed
-          to delivering high-quality work that meets and exceeds client
-          expectations. I am proud of my service and the skills I've developed
-          during that time.
+          My background in military service as a heavy equipment construction
+          supervisor has honed my leadership and problem-solving skills. I am
+          committed to delivering high-quality work that meets and exceeds
+          client expectations. I am proud of my service and the skills I've
+          developed during that time.
         </p>
       </Card>
       <Card>
-        <h3>My Hobbies and Interests</h3>
+        <h3>Hobbies and Interests</h3>
         <p>
           Currently, I am attending Code Fellows, a full-time boot camp in
-          Seattle, where I am developing my skills in web development and
+          Seattle, where I am further developing my web development skills and
           learning the MERN stack. I am excited to graduate in February and
           begin my career as a full-time developer. In my free time, I enjoy
           playing jazz on my guitar and saxophone, building computers, and
           exploring new hobbies. I have a passion for learning and am always
           looking for new opportunities to grow and expand my knowledge. Thank
-          you for visiting my website and I hope you enjoy it.
+          you for visiting my website, and I hope you enjoy it.
         </p>
       </Card>
       <Card>
-        <h3>Second heading</h3>
+        <h3>Professional Accomplishments</h3>
         <img
           class="logos"
           src={logos}
-          alt=""
+          alt="Professional Accomplishments"
         />
         <img
           class="logos-small"
           src={logosSmall}
-          alt=""
+          alt="Professional Accomplishments"
         />
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde
-          doloribus, vel ipsum mollitia aliquid cumque commodi corrupti omnis
-          ipsam sit earum, dolore quisquam harum qui non, quasi ea voluptatum
-          debitis!
+          I have a number of professional accomplishments, including
+          certifications and awards. These logos represent some of the companies
+          and organizations that I have worked with and received recognition
+          from.
         </p>
       </Card>
       <Card>
         <h3>Contact</h3>
-        <p>Feel free to reach out, ask me questions.</p>
-
+        <p>
+          Please feel free to reach out to me with any questions or to discuss
+          potential opportunities. You can contact me via LinkedIn, Twitter or
+          by email.
+        </p>
         <ul>
-          <li>Reach out on LinkedIn</li>
-          <li>Reach out on Twitter</li>
-          <li>Send me an Email!</li>
+          <li>LinkedIn: [username/link]</li>
+          <li>Twitter: [username/link]</li>
+          <li>Email: [email address]</li>
         </ul>
       </Card>
     </div>
