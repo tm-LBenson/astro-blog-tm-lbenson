@@ -3,8 +3,34 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
 
 :root {
-  --color-primary: #0f172a;
-  --color-secondary: #6b21a8;
+  --color-primary-dark: #1e5128;
+  --color-secondary-dark: #1e5128;
+  --color-primary-text-dark: #d8e9a8;
+
+  --color-secondary-text-dark: #4e9f3d;
+  --color-third-dark: linear-gradient(
+    #1e5128,
+    #4e9f3d,
+    #4e9f3d,
+    #4e9f3d,
+    #4e9f3d,
+    #4e9f3d,
+    #1e5128
+  );
+
+  --color-primary: #eae7b1;
+  --color-secondary: #eae7b1;
+  --color-primary-text: #61876e;
+  --color-secondary-text: #61876e;
+  --color-third: linear-gradient(
+    var(--color-primary),
+    var(--color-secondary-text),
+    var(--color-secondary-text),
+    var(--color-secondary-text),
+    var(--color-secondary-text),
+    var(--color-secondary-text),
+    var(--color-primary)
+  );
 }
 
 *,
@@ -19,8 +45,8 @@ body {
   font-family: 'Roboto', sans-serif;
   font-size: 16px;
   line-height: 1.5;
-  background: #f8fafc;
-  color: #333;
+  background: var(--color-primary);
+  color: var(--color-primary-text);
 }
 
 a {
@@ -69,6 +95,7 @@ h3 {
 }
 
 .page-content {
+  width: 100%;
   margin: 20px 0;
 }
 
@@ -85,9 +112,11 @@ h3 {
   font-size: 25px;
 }
 
+
+
 body.dark-mode {
-  background-color: rgb(37, 19, 19);
-  color: rgb(151, 146, 146);
+  background-color: var(--color-primary-dark);
+  color: var(--color-primary-text-dark);
 }
 
 body.dark-mode .card {
@@ -96,6 +125,20 @@ body.dark-mode .card {
 
 body.dark-mode .svg {
   color: rgb(151, 146, 146);
+}
+body.dark-mode .header {
+  background: var(--color-secondary-dark);
+}
+body.dark-mode .footer {
+  background: var(--color-secondary-dark);
+}
+
+body.dark-mode .showcase {
+  background: var(--color-third-dark);
+}
+
+body.dark-mode .btn {
+  background-color: var(--color-third-dark);
 }
 
 @media (max-width: 500px) {

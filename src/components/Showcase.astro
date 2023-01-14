@@ -12,6 +12,7 @@ const {
 } = Astro.props as Props;
 ---
 
+<script type="module" src="dist/main.js" crossorigin></script>
 <section class="showcase">
   <div class="showcase-text">
     <h1>{heading}</h1>
@@ -40,12 +41,7 @@ const {
 <style>
   .showcase {
     height: auto;
-    background-color: var(--color-secondary);
-    background-image: linear-gradient(
-      to bottom,
-      var(--color-primary),
-      rgb(15 23 42 / 0)
-    );
+    background: var(--color-third);
     padding: 30px;
   }
 

@@ -1,0 +1,47 @@
+/** @format */
+
+.hide {
+  opacity: 0;
+}
+
+.toggle-moon {
+  position: fixed;
+
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(purple, rgb(101, 4, 101));
+}
+
+.toggle-sun {
+  position: absolute;
+
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(rgb(128, 96, 0), rgb(156, 149, 23));
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 0.4;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.7s forwards;
+}
+
+.fade-out {
+  animation: fadeOut 1.2s forwards;
+}

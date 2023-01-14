@@ -2,6 +2,8 @@
 
 # TM-LBenson Blog
 
+This is a blog built using the Astro framework and written in TypeScript. The blog posts are written in Markdown.
+
 ## Features
 
 Responsive design for optimal viewing on any device
@@ -20,9 +22,7 @@ Navigation drawer for mobile screen sizes
 Updated content in the about page
 Dynamic tech news using an API
 Deployment on Netlify
-
-Blog
-This is a blog built using the Astro framework and written in TypeScript. The blog posts are written in Markdown.
+Scrolling Text
 
 ## Running locally
 
@@ -36,9 +36,10 @@ The built files will be in the build directory
 Deployment
 To deploy the blog, you can use a static site hosting service such as Netlify. Simply connect your Netlify account to your Git repository and configure the build settings to use the build directory as the publish directory.
 
-License
-This project is licensed under the terms of the MIT license. See the LICENSE file for more information.
-
 ## Conclusion
 
 Thank you for visiting my site. I hope you enjoy reading my blogs and using the features on the site. If you have any suggestions or feedback, please don't hesitate to reach out to me.
+
+## License
+
+This project is licensed under the terms of the MIT license. See the LICENSE file for more information.
