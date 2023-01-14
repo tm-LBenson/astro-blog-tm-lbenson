@@ -1,11 +1,11 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Showcase from '../components/Showcase.astro';
+import Showcase from '../components/Showcase.jsx';
 import Features from '../components/Features.astro';
 ---
 
 <Layout title="TM-LBenson">
-  <Showcase showExtra={true} />
+  <Showcase client:load />
   <Features />
   <section class="page-content">
     <div class="container">
