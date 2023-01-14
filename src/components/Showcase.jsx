@@ -45,14 +45,22 @@ export default function Showcase() {
           </div>
         </div>
         <>
-          <div class="showcase-img">
-            <div class="logos">
-              <img src="mern-icon.png" alt='MERN Stack logo'></img>
+
+            <div class="showcase-img">
+              <div class="logos">
+                <img
+                  src="mern-icon.png"
+                  alt="MERN Stack logo"
+                ></img>
+              </div>
             </div>
-          </div>
+      
 
           <p class="showcase-demo">
-            <small>This is where you can learn about what I do.</small>
+            <small>
+              Empowering developers to create, innovate, and captivate a
+              connected world
+            </small>
           </p>
         </>
       </section>
