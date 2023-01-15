@@ -9,8 +9,18 @@ const year = new Date().getFullYear();
       <p>Copyright {year} Lewis Benson.</p>
     </div>
     <div>
+      <h3>Social</h3>
+      <ul class="links">
+        <li>
+          <a href="https://www.linkedin.com/in/tm-lewis-benson/">LinkedIn</a>
+        </li>
+        <li><a href="https://github.com/tm-LBenson">GitHub</a></li>
+        <li><a href="https://twitter.com/TM_LBenson">Twitter</a></li>
+      </ul>
+    </div>
+    <div>
       <h3>Links</h3>
-      <ul>
+      <ul class="links">
         <li><a href="/">Home</a></li>
         <li><a href="/about">About</a></li>
         <li><a href="/blog">Blog</a></li>
@@ -21,10 +31,10 @@ const year = new Date().getFullYear();
 
 <style>
   .footer {
-    background: var(--color-secondary);
+    background: var(--color-third);
     color: #fff;
     text-align: center;
-    padding: 20px;
+    padding: 10rem;
     margin-top: 60px;
   }
 
@@ -32,6 +42,10 @@ const year = new Date().getFullYear();
     display: flex;
     justify-content: space-between;
     align-items: center;
+  }
+  .links {
+    display: flex;
+    gap: 2rem;
   }
 
   .footer a {

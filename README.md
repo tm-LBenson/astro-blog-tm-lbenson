@@ -6,27 +6,35 @@ This is a blog built using the Astro framework and written in TypeScript. The bl
 
 ## Features
 
-Responsive design for optimal viewing on any device
-Dark mode toggle for easy reading at night
-Fun animation when switching between light and dark mode
-Blog preview using cards
+- [x] Responsive design for optimal viewing on any device
+- [x] Dark mode toggle for easy reading at night
+- [x] Fun animation when switching between light and dark mode
+- [x] Blog preview using cards
+- [x] Scrolling Text
 
 ## Future Plans
 
+Add github stats
+Make it rain in the section with skills all the icons
 I am constantly working on improving the site and adding new features. Some things I have planned for the future include:
-
-More blog posts about various topics
+Add 3 most recent blog posts to main page with a link to view all [reference](https://www.a11ywithlindsey.com/)
+have the header slower drop into the page on page load [reference](https://www.adhamdannaway.com/blog)
 Improved search functionality for finding specific posts
 Integration with social media platforms for easy sharing
 Navigation drawer for mobile screen sizes
 Updated content in the about page
-Dynamic tech news using an API
+Dynamic tech news using an API (considering a separate project for this)
 Deployment on Netlify
-Scrolling Text
+Add profile pic to about page
+Consider adding a pitch video
+Comment system
+Contact Form that sends an email without the user having to use their own email system[reference](https://olaolu.dev/)
+
 
 ## Running locally
 
 Clone the repository
+
 Install dependencies: npm install or yarn install
 Start the development server: npm run dev or yarn dev
 Open http://localhost:3000 in your browser

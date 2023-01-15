@@ -1,19 +1,21 @@
 /** @format */
 
 import logo from '../images/logo.png';
-import Moon from './icons/Moon.jsx';
-import Sun from './icons/Sun.jsx';
 import DarkModeIcon from './icons/DarkModeIcon.jsx';
 
 import React, { useEffect, useState } from 'react';
 import './Header.css';
+import MoonSun from './MoonSun';
 
 export default function Header() {
+  const [icon, setIcon] = useState(false);
   const [isDarkModeEnabled, setIsDarkModeEnabled] = useState(
     localStorage.getItem('darkMode') === 'enabled',
   );
 
   const toggleDarkMode = async () => {
+    setIcon(true);
+    setTimeout(() => setIcon(false), 3000);
     if (isDarkModeEnabled) {
       localStorage.setItem('darkMode', 'disabled');
       setIsDarkModeEnabled(false);
@@ -62,11 +64,7 @@ export default function Header() {
           </ul>
         </nav>
       </div>
-      {isDarkModeEnabled ? (
-        <Moon className="moon-svg" />
-      ) : (
-        <Sun className="sun-svg" />
-      )}
+      {icon && <MoonSun isDarkModeEnabled={isDarkModeEnabled} />}
     </header>
   );
 }
