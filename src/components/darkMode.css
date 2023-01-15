@@ -1,47 +1,30 @@
-/** @format */
+/**
+ * fade-out class
+ *
+ * @format
+ */
 
-.hide {
-  opacity: 0;
-}
-
-.toggle-moon {
+.sun-svg,
+.moon-svg {
   position: fixed;
-
-  width: 100vw;
-  height: 100vh;
-  background: linear-gradient(purple, rgb(101, 4, 101));
+  animation: fadeOut 2.99s ease-in-out;
 }
 
-.toggle-sun {
-  position: absolute;
-
-  width: 100vw;
-  height: 100vh;
-  background: linear-gradient(rgb(128, 96, 0), rgb(156, 149, 23));
-}
-
+/* keyframes for fadeIn and fadeOut animations */
 @keyframes fadeIn {
   from {
     opacity: 0;
   }
   to {
-    opacity: 0.4;
+    opacity: 1;
   }
 }
 
 @keyframes fadeOut {
   from {
-    opacity: 0.4;
+    opacity: 1;
   }
   to {
     opacity: 0;
   }
-}
-
-.fade-in {
-  animation: fadeIn 0.7s forwards;
-}
-
-.fade-out {
-  animation: fadeOut 1.2s forwards;
 }

@@ -10,16 +10,21 @@
   min-height: 300px;
 }
 
+.showcase-demo{
+  width: 100%;
+  text-align: center;
+}
+
 .showcase-text {
   max-width: 500px;
-  color: #fff;
+  color: var(--color-secondary-text);
   text-align: center;
   margin: 50px auto;
 }
 
 .showcase h1 {
   font-size: 50px;
-  color: #fff;
+  color: var(--color-secondary-text);
   margin-bottom: 20px;
 }
 
@@ -30,24 +35,18 @@
 
 .showcase-img {
   display: flex;
-  flex-direction: column;
   justify-content: center;
   padding-top: 20px;
-  height: 10rem;
+  max-width: 1050px;
   margin: auto;
-  width: 25rem;
+ 
   border-radius: 6px;
-  background-color: #fff;
   text-align: center;
+  background-color: beige;
 }
 
 
-
-.showcase-demo {
-  color: #fff;
-  text-align: center;
-  font-weight: 300;
-}
 
 @media (max-width: 960px) {
 }
+
