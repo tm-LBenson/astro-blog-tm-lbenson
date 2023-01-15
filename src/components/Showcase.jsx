@@ -3,6 +3,7 @@
 import React, { useRef, useEffect } from 'react';
 import './Showcase.css';
 import Typed from 'typed.js';
+import { Icon } from '@iconify/react';
 export default function Showcase() {
   const renderedSpan = useRef(null);
   const typed = useRef(null);
@@ -31,8 +32,8 @@ export default function Showcase() {
 
   return (
     <>
-      <section class="showcase">
-        <div class="showcase-text">
+      <section className="showcase">
+        <div className="showcase-text">
           <div className="wrap">
             <h1>Lewis Benson</h1>
 
@@ -45,18 +46,34 @@ export default function Showcase() {
           </div>
         </div>
         <>
+          <div className="showcase-img">
+            <div className="logos">
+            <Icon icon="vscode-icons:file-type-mongo" color="green" width="50" height="50" />
+            <Icon icon="simple-icons:express" color="green" width="50" height="50" />
+            <Icon icon="mdi:react" color="green" width="50" height="50" />
+            <Icon icon="vscode-icons:file-type-node" color="green" width="50" height="50" />
+            <Icon icon="akar-icons:postgresql-fill" color="green" width="50" height="50" />
+            <Icon icon="logos:html-5" color="green" width="50" height="50" />
+            <Icon icon="logos:css-3" color="green" width="50" height="50" />
+            <Icon icon="tabler:brand-javascript" width="50" height="50" />
+            <Icon icon="fa-brands:bootstrap" color="purple" width="50" height="50" />
+            <Icon icon="vscode-icons:file-type-sass" color="purple" width="50" height="50" />
+            <Icon icon="mdi:git" color="black" width="50" height="50" />
+            <Icon icon="bxl:heroku" color="black" width="50" height="50" />
+            <Icon icon="mdi:github" color="black" width="50" height="50" />
+            <Icon icon="simple-icons:inkscape" color="black" width="50" height="50" />
+            <Icon icon="logos:aws" color="black" width="50" height="50" />
+            <Icon icon="logos:figma" color="black" width="50" height="50" />
+            <Icon icon="ri:invision-fill" color="black" width="50" height="50" />
+            <Icon icon="logos:bash-icon" color="black" width="50" height="50" />
+            <Icon icon="openmoji:wireframes" color="black" width="50" height="50" />
+            <Icon icon="logos:visual-studio-code" color="black" width="50" height="50" />
+            <Icon icon="vscode-icons:file-type-jest" color="black" width="50" height="50" />
 
-            <div class="showcase-img">
-              <div class="logos">
-                <img
-                  src="mern-icon.png"
-                  alt="MERN Stack logo"
-                ></img>
-              </div>
             </div>
-      
+          </div>
 
-          <p class="showcase-demo">
+          <p className="showcase-demo">
             <small>
               Empowering developers to create, innovate, and captivate a
               connected world
@@ -64,6 +81,7 @@ export default function Showcase() {
           </p>
         </>
       </section>
+    
     </>
   );
 }
