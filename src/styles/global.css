@@ -7,7 +7,7 @@
   --color-secondary-dark: #1e5128;
   --color-primary-text-dark: #d8e9a8;
 
-  --color-secondary-text-dark: #4e9f3d;
+  --color-secondary-text-dark: --color-primary-text-dark;
   --color-third-dark: linear-gradient(
     #1e5128,
     #4e9f3d,
@@ -19,16 +19,16 @@
   );
 
   --color-primary: #eae7b1;
-  --color-secondary: #eae7b1;
+  --color-secondary: #9c9964;
   --color-primary-text: #61876e;
   --color-secondary-text: #61876e;
   --color-third: linear-gradient(
     var(--color-primary),
-    var(--color-secondary-text),
-    var(--color-secondary-text),
-    var(--color-secondary-text),
-    var(--color-secondary-text),
-    var(--color-secondary-text),
+    var(--color-secondary),
+    var(--color-secondary),
+    var(--color-secondary),
+    var(--color-secondary),
+    var(--color-secondary),
     var(--color-primary)
   );
 }
@@ -112,8 +112,6 @@ h3 {
   font-size: 25px;
 }
 
-
-
 body.dark-mode {
   background-color: var(--color-primary-dark);
   color: var(--color-primary-text-dark);
@@ -129,8 +127,22 @@ body.dark-mode .svg {
 body.dark-mode .header {
   background: var(--color-secondary-dark);
 }
+
+body.dark-mode .header a {
+  color: var(--color-secondary-dark-text);
+}
+
+body.dark-mode .header .svg {
+  color: var(--color-secondary-dark-text);
+}
+
 body.dark-mode .footer {
-  background: var(--color-secondary-dark);
+  background: var(--color-third-dark);
+  color: var(--color-secondary-dark-text);
+}
+
+body.dark-mode .footer a {
+  color: var(--color-secondary-dark-text);
 }
 
 body.dark-mode .showcase {
@@ -139,6 +151,14 @@ body.dark-mode .showcase {
 
 body.dark-mode .btn {
   background-color: var(--color-third-dark);
+}
+
+body.dark-mode .showcase-text {
+  color: var(--color-secondary-text-dark);
+}
+body.dark-mode .showcase h1 {
+  color: var(--color-secondary-text-dark);
+
 }
 
 @media (max-width: 500px) {
