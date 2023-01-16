@@ -4,24 +4,25 @@
 
 :root {
   --color-primary-dark: #1e5128;
-  --color-secondary-dark: #1e5128;
+  --color-secondary-dark: #4e9f3d;
   --color-primary-text-dark: #d8e9a8;
-
-  --color-secondary-text-dark: --color-primary-text-dark;
-  --color-third-dark: linear-gradient(
-    #1e5128,
-    #4e9f3d,
-    #4e9f3d,
-    #4e9f3d,
-    #4e9f3d,
-    #4e9f3d,
-    #1e5128
-  );
-
-  --color-primary: #eae7b1;
+ --color-primary: #eae7b1;
   --color-secondary: #9c9964;
   --color-primary-text: #61876e;
   --color-secondary-text: #fff;
+  --color-secondary-text-dark: --color-primary-text-dark;
+
+  --color-third-dark: linear-gradient(
+    var(--color-primary-dark),
+    var(--color-secondary-dark),
+    var(--color-secondary-dark),
+    var(--color-secondary-dark),
+    var(--color-secondary-dark),
+    var(--color-secondary-dark),
+    var(--color-primary-dark)
+  );
+
+ 
   --color-third: linear-gradient(
     var(--color-primary),
     var(--color-secondary),
@@ -125,7 +126,7 @@ body.dark-mode .svg {
   color: rgb(151, 146, 146);
 }
 body.dark-mode .header {
-  background: var(--color-secondary-dark);
+  background: var(--color-primary-dark);
 }
 
 body.dark-mode .header a {
@@ -160,6 +161,13 @@ body.dark-mode .showcase h1 {
   color: var(--color-secondary-text-dark);
 
 }
+body.dark-mode .btn{
+ background-color: var(--color-secondary);
+}
+
+body.dark-mode a{
+  color: var(--color-secondary);
+ }
 
 @media (max-width: 500px) {
   h1,
