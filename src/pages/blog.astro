@@ -14,14 +14,18 @@ const posts = await Astro.glob('../blogs/*.md');
         posts.map((blog) => (
           <div class="card-blog">
             <Card>
-              <h3>{blog.frontmatter.title}</h3>
-              <p>{blog.frontmatter.excerpt}</p>
-              <a
+             
+                <div style={`background-image:  url('./splash/${blog.frontmatter.date.slice(8, 10)}.jpg'); " class="blog-title`} class="gradient">
+                  <h3 >{blog.frontmatter.title}</h3>
+                  </div>
+                <p class="blog-preview">{blog.frontmatter.excerpt}</p>
+                <a
                 class="btn"
                 href={`/${blog.frontmatter.slug}`}
-              >
+                >
                 Read More
-              </a>
+                </a>
+                
             </Card>
           </div>
         ))
@@ -45,8 +49,34 @@ const posts = await Astro.glob('../blogs/*.md');
     min-width: 25rem;
     max-width: 25rem;
     height: 35rem;
+   
   }
 
+  .card-blog h3{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 18rem;
+    color: white;
+    background: linear-gradient(rgba(128, 128, 128, 0.324), rgba(0, 0, 0, 0.457));
+
+  }
+  .gradient{
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .blog-title{
+    height: 100px;
+  }
+
+  .blog-preview{
+    height: 200px;
+  }
+
+  .background-img{
+
+  }
   @media (max-width: 1200px) {
     .page-content .blog-posts {
       grid-template-columns: 1fr;

@@ -21,7 +21,7 @@
   --color-primary: #eae7b1;
   --color-secondary: #9c9964;
   --color-primary-text: #61876e;
-  --color-secondary-text: #61876e;
+  --color-secondary-text: #fff;
   --color-third: linear-gradient(
     var(--color-primary),
     var(--color-secondary),
