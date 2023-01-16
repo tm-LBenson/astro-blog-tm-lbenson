@@ -6,13 +6,18 @@ import DarkModeIcon from './icons/DarkModeIcon.jsx';
 import React, { useEffect, useState } from 'react';
 import './Header.css';
 import MoonSun from './MoonSun';
-
+import { Icon } from '@iconify/react';
+import NavDrawer from './NavDrawer';
+import { useMediaQuery } from 'react-responsive';
 export default function Header() {
   const [icon, setIcon] = useState(false);
   const [isDarkModeEnabled, setIsDarkModeEnabled] = useState(
     localStorage.getItem('darkMode') === 'enabled',
   );
-
+  const [isNavDrawerOpen, setIsNavDrawerOpen] = useState(false);
+  const isMobile = useMediaQuery({
+    query: '(max-width: 768px)',
+  });
   const toggleDarkMode = async () => {
     setIcon(true);
     setTimeout(() => setIcon(false), 3000);
@@ -44,24 +49,42 @@ export default function Header() {
           </a>
         </div>
         <nav>
-          <ul>
-            <li>
-              <a href="/">Home</a>
-            </li>
-            <li>
-              <a href="/about">About</a>
-            </li>
-            <li>
-              <a href="/blog">Blog</a>
-            </li>
-            <li
-              onClick={toggleDarkMode}
-              id="toggle-button"
-              className="link"
+          {isMobile && <NavDrawer isOpen={isNavDrawerOpen} />}
+
+          {isMobile && (
+            <button
+              className="nav-drawer-toggle"
+              onClick={() => setIsNavDrawerOpen(!isNavDrawerOpen)}
             >
-              <DarkModeIcon />
-            </li>
-          </ul>
+              <Icon
+                icon="prime:bars"
+                color="black"
+                width="25"
+                height="25"
+              />
+            </button>
+          )}
+
+          {!isMobile && (
+            <ul>
+              <li>
+                <a href="/">Home</a>
+              </li>
+              <li>
+                <a href="/about">About</a>
+              </li>
+              <li>
+                <a href="/blog">Blog</a>
+              </li>
+              <li
+                onClick={toggleDarkMode}
+                id="toggle-button"
+                className="link"
+              >
+                <DarkModeIcon />
+              </li>
+            </ul>
+          )}
         </nav>
       </div>
       {icon && <MoonSun isDarkModeEnabled={isDarkModeEnabled} />}
