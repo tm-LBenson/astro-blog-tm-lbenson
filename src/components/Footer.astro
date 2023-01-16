@@ -1,61 +1,82 @@
 ---
 const year = new Date().getFullYear();
 ---
-<script src="https://code.iconify.design/iconify-icon/1.0.2/iconify-icon.min.js"></script>
+
+<script src="https://code.iconify.design/iconify-icon/1.0.2/iconify-icon.min.js"
+></script>
 <footer class="footer">
   <div class="container">
-    <div>
+    <section>
       <h3>TM-LBenson</h3>
       <p>Copyright {year} Lewis Benson.</p>
-    </div>
-    <div>
+    </section>
+    <section>
       <h3>Social</h3>
       <ul class="links">
         <li>
-          
-          <a href="https://www.linkedin.com/in/tm-lewis-benson/"><iconify-icon icon="mdi:linkedin" style="color: black;" width="25" height="25"></iconify-icon>LinkedIn</a>
+          <a href="https://www.linkedin.com/in/tm-lewis-benson/"
+            ><iconify-icon
+              icon="mdi:linkedin"
+              style="color: black;"
+              width="25"
+              height="25"
+            ></iconify-icon>LinkedIn</a
+          >
         </li>
-        <li><a href="https://github.com/tm-LBenson"><iconify-icon icon="mdi:github" style="color: black;" width="25" height="25"></iconify-icon>GitHub</a></li>
-        <li><a href="https://twitter.com/TM_LBenson"><iconify-icon icon="icon-park-solid:twitter" style="color: black;" width="25" height="25"></iconify-icon>Twitter</a></li>
+        <li>
+          <a href="https://github.com/tm-LBenson"
+            ><iconify-icon
+              icon="mdi:github"
+              style="color: black;"
+              width="25"
+              height="25"
+            ></iconify-icon>GitHub</a
+          >
+        </li>
+        <li>
+          <a href="https://twitter.com/TM_LBenson"
+            ><iconify-icon
+              icon="icon-park-solid:twitter"
+              style="color: black;"
+              width="25"
+              height="25"
+            ></iconify-icon>Twitter</a
+          >
+        </li>
       </ul>
-    </div>
-    <div>
-  
-        <div class="back-to-top"></div>
-    
+    </section>
+    <section>
+      <div class="back-to-top"></div>
+
       <h3>Links</h3>
       <ul class="links">
         <li><a href="/">Home</a></li>
         <li><a href="/about">About</a></li>
         <li><a href="/blog">Blog</a></li>
       </ul>
-    </div>
+    </section>
   </div>
 </footer>
-<script> 
-document.querySelector('.back-to-top').addEventListener('click',()=>{
-  document.body.scrollIntoView({behavior: 'smooth', block: 'start'});
-});
-let lastKnownScrollY = 0;
-let currentScrollY = 0;
-const backToTop = document.querySelector('.back-to-top');
+<script>
+  document.querySelector('.back-to-top').addEventListener('click', () => {
+    document.body.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+  let lastKnownScrollY = 0;
+  let currentScrollY = 0;
+  const backToTop = document.querySelector('.back-to-top');
 
-window.addEventListener('scroll', () => {
-  lastKnownScrollY = currentScrollY;
-  currentScrollY = window.scrollY;
-  if (currentScrollY > lastKnownScrollY && currentScrollY > 100) {
-    backToTop.classList.add('visible');
-  } else {
-    backToTop.classList.remove('visible');
-  }
-});
-
-
-
+  window.addEventListener('scroll', () => {
+    lastKnownScrollY = currentScrollY;
+    currentScrollY = window.scrollY;
+    if (currentScrollY > lastKnownScrollY && currentScrollY > 100) {
+      backToTop.classList.add('visible');
+    } else {
+      backToTop.classList.remove('visible');
+    }
+  });
 </script>
 <style>
-
-  .back-to-top{
+  .back-to-top {
     content: url('https://api.iconify.design/material-symbols/arrow-upward.svg?color=white&width=25&height=25');
     position: fixed;
     bottom: 30px;
@@ -65,13 +86,12 @@ window.addEventListener('scroll', () => {
     height: 50px;
     width: 50px;
     opacity: 0;
-  transition: opacity 0.5s ease-in-out;
+    transition: opacity 0.5s ease-in-out;
   }
 
-
   .back-to-top.visible {
-  opacity: 1;
-}
+    opacity: 1;
+  }
 
   .footer {
     background: var(--color-third);
@@ -107,9 +127,24 @@ window.addEventListener('scroll', () => {
     text-align: left;
   }
 
-  @media (max-width: 500px) {
-    .footer div:nth-child(2) {
-      display: none;
+  @media (max-width: 1200px) {
+    .footer .container {
+      text-align: left;
+      display: flex;
+      align-items: flex-start;
+      flex-direction: column;
+      justify-content: flex-start;
+      gap: 6rem;
+    }
+    .footer section {
+      display: flex;
+      width: 100%;
+      gap: 6rem;
+      justify-content: flex-start;
+      margin-left: -100px;
+    }
+    .footer section p {
+      min-width: 230px;
     }
   }
 </style>
