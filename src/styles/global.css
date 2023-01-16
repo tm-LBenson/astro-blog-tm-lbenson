@@ -6,7 +6,7 @@
   --color-primary-dark: #1e5128;
   --color-secondary-dark: #4e9f3d;
   --color-primary-text-dark: #d8e9a8;
- --color-primary: #eae7b1;
+  --color-primary: #eae7b1;
   --color-secondary: #9c9964;
   --color-primary-text: #61876e;
   --color-secondary-text: #fff;
@@ -22,7 +22,6 @@
     var(--color-primary-dark)
   );
 
- 
   --color-third: linear-gradient(
     var(--color-primary),
     var(--color-secondary),
@@ -159,15 +158,18 @@ body.dark-mode .showcase-text {
 }
 body.dark-mode .showcase h1 {
   color: var(--color-secondary-text-dark);
-
 }
-body.dark-mode .btn{
- background-color: var(--color-secondary);
+body.dark-mode .btn {
+  background-color: var(--color-secondary);
 }
 
-body.dark-mode a{
+body.dark-mode a {
   color: var(--color-secondary);
- }
+}
+
+body.dark-mode .nav-drawer {
+  background: var(--color-primary-dark);
+}
 
 @media (max-width: 500px) {
   h1,
