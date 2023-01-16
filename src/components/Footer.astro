@@ -20,6 +20,9 @@ const year = new Date().getFullYear();
       </ul>
     </div>
     <div>
+  
+        <div class="back-to-top"></div>
+    
       <h3>Links</h3>
       <ul class="links">
         <li><a href="/">Home</a></li>
@@ -29,8 +32,47 @@ const year = new Date().getFullYear();
     </div>
   </div>
 </footer>
+<script> 
+document.querySelector('.back-to-top').addEventListener('click',()=>{
+  document.body.scrollIntoView({behavior: 'smooth', block: 'start'});
+});
+let lastKnownScrollY = 0;
+let currentScrollY = 0;
+const backToTop = document.querySelector('.back-to-top');
 
+window.addEventListener('scroll', () => {
+  lastKnownScrollY = currentScrollY;
+  currentScrollY = window.scrollY;
+  if (currentScrollY > lastKnownScrollY && currentScrollY > 100) {
+    backToTop.classList.add('visible');
+  } else {
+    backToTop.classList.remove('visible');
+  }
+});
+
+
+
+</script>
 <style>
+
+  .back-to-top{
+    content: url('https://api.iconify.design/material-symbols/arrow-upward.svg?color=white&width=25&height=25');
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    border-radius: 10000px;
+    background: linear-gradient(red, rgb(159, 1, 1));
+    height: 50px;
+    width: 50px;
+    opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+  }
+
+
+  .back-to-top.visible {
+  opacity: 1;
+}
+
   .footer {
     background: var(--color-third);
     color: #fff;
