@@ -1,60 +1,67 @@
 ---
 const year = new Date().getFullYear();
+import logo from '../images/logo.png';
 ---
 
 <script src="https://code.iconify.design/iconify-icon/1.0.2/iconify-icon.min.js"
 ></script>
 <footer class="footer">
   <div class="container">
+    <img
+      class="logo"
+      src={logo}
+      alt="Logo"
+    />
     <section>
-      <h3>TM-LBenson</h3>
-      <p>Copyright {year} Lewis Benson.</p>
-    </section>
-    <section>
-      <h3>Social</h3>
-      <ul class="links">
-        <li>
-          <a href="https://www.linkedin.com/in/tm-lewis-benson/"
-            ><iconify-icon
-              icon="mdi:linkedin"
-              style="color: black;"
-              width="25"
-              height="25"
-            ></iconify-icon>LinkedIn</a
-          >
-        </li>
-        <li>
-          <a href="https://github.com/tm-LBenson"
-            ><iconify-icon
-              icon="mdi:github"
-              style="color: black;"
-              width="25"
-              height="25"
-            ></iconify-icon>GitHub</a
-          >
-        </li>
-        <li>
-          <a href="https://twitter.com/TM_LBenson"
-            ><iconify-icon
-              icon="icon-park-solid:twitter"
-              style="color: black;"
-              width="25"
-              height="25"
-            ></iconify-icon>Twitter</a
-          >
-        </li>
-      </ul>
-    </section>
-    <section>
-      <div class="back-to-top"></div>
-
-      <h3>Links</h3>
-      <ul class="links">
+      <ul class="links main-links">
         <li><a href="/">Home</a></li>
         <li><a href="/about">About</a></li>
         <li><a href="/blog">Blog</a></li>
       </ul>
     </section>
+    <div class="bottom">
+      <section>
+        <h3>TM-LBenson</h3>
+        <p>Copyright {year} Lewis Benson.</p>
+      </section>
+      <section>
+        <h3>Social</h3>
+        <ul class="links">
+          <li>
+            <a href="https://www.linkedin.com/in/tm-lewis-benson/"
+              ><iconify-icon
+                icon="mdi:linkedin"
+                style="color: black;"
+                width="25"
+                height="25"
+              ></iconify-icon>LinkedIn</a
+            >
+          </li>
+          <li>
+            <a href="https://github.com/tm-LBenson"
+              ><iconify-icon
+                icon="mdi:github"
+                style="color: black;"
+                width="25"
+                height="25"
+              ></iconify-icon>GitHub</a
+            >
+          </li>
+          <li>
+            <a href="https://twitter.com/TM_LBenson"
+              ><iconify-icon
+                icon="icon-park-solid:twitter"
+                style="color: black;"
+                width="25"
+                height="25"
+              ></iconify-icon>Twitter</a
+            >
+          </li>
+        </ul>
+      </section>
+    </div>
+
+    <div class="back-to-top"></div>
   </div>
 </footer>
 <script>
@@ -70,7 +77,7 @@ const year = new Date().getFullYear();
     currentScrollY = window.scrollY;
     if (currentScrollY > lastKnownScrollY && currentScrollY > 100) {
       backToTop.classList.add('visible');
-    } else {
+    } else if (currentScrollY === 0) {
       backToTop.classList.remove('visible');
     }
   });
@@ -100,11 +107,42 @@ const year = new Date().getFullYear();
     padding: 10rem;
     margin-top: 60px;
   }
+  .logo {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 3rem;
+  }
+
+  .main-links {
+    font-size: 1.6rem;
+    display: flex;
+    justify-content: center;
+    padding: 5rem;
+    width: 80vw;
+    border-top: 3px rgba(50, 37, 37, 0.234) solid;
+    border-bottom: 3px rgba(50, 37, 37, 0.234) solid;
+  }
 
   .footer .container {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    justify-content: space-around;
     align-items: center;
+  }
+  .bottom {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+  .bottom section {
+    margin-top: 5rem;
+    width: 50%;
+    text-align: center;
+  }
+
+  .bottom ul {
+    display: flex;
+    justify-content: center;
   }
   .links {
     display: flex;
