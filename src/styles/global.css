@@ -161,7 +161,7 @@ body.dark-mode .showcase h1 {
 }
 body.dark-mode .btn {
   background-color: var(--color-secondary-dark);
-   color: var(--color-secondary-text-dark);
+  color: var(--color-secondary-text-dark);
 }
 
 body.dark-mode a {
