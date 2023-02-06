@@ -1,0 +1,205 @@
+---
+export interface Props {
+  title?: string;
+}
+import Card from './Card.astro';
+
+const posts = await Astro.glob('../blogs/*.md');
+const { title } = Astro.props as Props;
+function getPrevAndNextPosts(posts, title) {
+  let currentIndex;
+  posts.forEach((post, index) => {
+    if (post.frontmatter.title === title) {
+      currentIndex = index;
+    }
+  });
+
+  const prevPost =
+    currentIndex === 0 ? posts[posts.length - 1] : posts[currentIndex - 1];
+  const nextPost =
+    currentIndex === posts.length - 1 ? posts[0] : posts[currentIndex + 1];
+
+  return [prevPost, nextPost];
+}
+
+const filteredPosts = getPrevAndNextPosts(posts, title);
+---
+
+<section class="page-content">
+  <div class="container blog-posts">
+    {
+      filteredPosts.map((blog, index) => {
+        return index % 2 === 0 ? (
+          <div class="card-blog slide-in from-left">
+            <Card>
+              {' '}
+              <p class="previous">Previous</p>
+              <div
+                style={`background-image:  url('./splash/${blog.frontmatter.date.slice(
+                  8,
+                  10,
+                )}.jpg'); " class="blog-title`}
+                class="gradient"
+              >
+                <h3>{blog.frontmatter.title}</h3>
+              </div>
+              <p class="blog-preview">{blog.frontmatter.excerpt}</p>
+              <a
+                class="btn"
+                href={`/${blog.frontmatter.slug}`}
+              >
+                Read More
+              </a>
+            </Card>
+          </div>
+        ) : (
+          <div class="card-blog slide-in from-right">
+            <Card>
+              <p class="next">Next</p>
+              <div
+                style={`background-image:  url('./splash/${blog.frontmatter.date.slice(
+                  8,
+                  10,
+                )}.jpg'); " class="blog-title`}
+                class="gradient"
+              >
+                <h3>{blog.frontmatter.title}</h3>
+              </div>
+              <p class="blog-preview">{blog.frontmatter.excerpt}</p>
+              <a
+                class="btn"
+                href={`/${blog.frontmatter.slug}`}
+              >
+                Read More
+              </a>
+            </Card>
+          </div>
+        );
+      })
+    }
+  </div>
+</section>
+<script>
+  const options = {
+    threshold: 0,
+    rootMargin: '0px 0px 0px 0px',
+  };
+  const cardsSlideIn = document.querySelectorAll('.slide-in');
+  const cardsFadeIn = document.querySelectorAll('.fade-in');
+  const appearOnScroll = new IntersectionObserver((entries, appearOnScroll) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) {
+        return;
+      } else {
+        entry.target.classList.add('appear');
+        appearOnScroll.unobserve(entry.target);
+      }
+    });
+  }, options);
+
+  cardsFadeIn.forEach((card) => {
+    appearOnScroll.observe(card);
+  });
+
+  cardsSlideIn.forEach((card) => {
+    appearOnScroll.observe(card);
+  });
+</script>
+<style>
+  .previous, .next {
+    position: absolute;
+    padding: 1rem;
+    text-align: center;
+    background-color: #333;
+    top: 36px;
+  }
+  .next{
+    right: 32px;
+  }
+
+  .page-content .blog-posts {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
+    padding: 0 20px;
+    margin: auto;
+    min-height: 100vh;
+  }
+
+  .from-left {
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+  }
+
+  .from-right {
+    -webkit-transform: translateX(50%);
+    transform: translateX(50%);
+  }
+
+  .fade-in {
+    opacity: 0;
+    transition: opacity 250ms ease-in;
+  }
+  .fade-in.appear {
+    opacity: 1;
+  }
+
+  .from-left,
+  .from-right {
+    transition: opacity 250ms ease-in, -webkit-transform 400ms ease-in;
+    transition: opacity 250ms ease-in, transform 400ms ease-in;
+    transition: opacity 250ms ease-in, transform 400ms ease-in,
+      -webkit-transform 400ms ease-in;
+    opacity: 0;
+  }
+
+  .from-left.appear,
+  .from-right.appear {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    opacity: 1;
+  }
+
+  .card-blog .card {
+    min-width: 25rem;
+    max-width: 25rem;
+    height: 35rem;
+  }
+
+  .card-blog h3 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    height: 18rem;
+    color: white;
+    background: linear-gradient(
+      rgba(128, 128, 128, 0.324),
+      rgba(0, 0, 0, 0.457)
+    );
+  }
+  .gradient {
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .blog-title {
+    height: 100px;
+  }
+
+  .blog-preview {
+    height: 200px;
+  }
+
+  .background-img {
+  }
+  @media (max-width: 1200px) {
+    .page-content .blog-posts {
+      grid-template-columns: 1fr;
+      margin: auto;
+    }
+    .page-content {
+      display: flex;
+    }
+  }
+</style>
