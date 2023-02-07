@@ -20,20 +20,29 @@ const featuresData = [
   <div class="container">
     {
       featuresData.map((item) => (
-        <Card>
-          <h3>{item.title}</h3>
-          <p>{item.body}</p>
-        </Card>
+        <div class="grow">
+          <Card>
+            <h3>{item.title}</h3>
+            <p>{item.body}</p>
+          </Card>
+        </div>
       ))
     }
   </div>
 </section>
 
 <style>
+  .grow {
+    transition: all 0.2s ease-in-out;
+  }
+
+  .grow:hover {
+    transform: scale(1.1);
+  }
   .features .container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-gap: 20px;
+    grid-gap: 28px;
     padding: 0 20px;
     margin: auto;
   }

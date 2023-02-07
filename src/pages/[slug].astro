@@ -1,6 +1,8 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.astro';
+import Samples from '../components/Samples.astro';
+
 export async function getStaticPaths() {
   const posts = await Astro.glob('../blogs/*.md');
   return posts.map((post) => ({
@@ -34,6 +36,7 @@ const { Content, frontmatter } = Astro.props.post;
       </Card>
     </div>
   </section>
+  <Samples title={frontmatter.title} />
 </Layout>
 
 <style>
