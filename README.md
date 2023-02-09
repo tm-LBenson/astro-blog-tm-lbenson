@@ -13,7 +13,7 @@ This is a blog built using the Astro framework and written in TypeScript. The bl
 - [x] Scrolling Text
 
 ## Future Plans
-
+Make the page fully responsive
 Add github stats
 Make it rain in the section with skills all the icons
 I am constantly working on improving the site and adding new features. Some things I have planned for the future include:
