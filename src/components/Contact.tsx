@@ -2,52 +2,100 @@
 
 import { useState } from 'react';
 
-export default function Form() {
+const ContactForm = () => {
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [message, setMessage] = useState('');
   const [responseMessage, setResponseMessage] = useState('');
 
-  async function submit(e: SubmitEvent) {
-    e.preventDefault();
-    const formData = new FormData(e.target as HTMLFormElement);
-    const response = await fetch('http://localhost:3002/contact', {
-      method: 'POST',
-      body: formData,
-    });
-    const data = await response.json();
-    if (data.message) {
-      setResponseMessage(data.message);
+  const handleNameChange = (event) => {
+    setName(event.target.value);
+  };
+
+  const handleEmailChange = (event) => {
+    setEmail(event.target.value);
+  };
+
+  const handleMessageChange = (event) => {
+    setMessage(event.target.value);
+  };
+
+  const handleSendButtonClick = async () => {
+    // perform submission based on state
+    console.log(`Name: ${name}, Email: ${email}, Message: ${message}`);
+
+    // send POST request to server
+    try {
+      const response = await fetch('http://localhost:3002/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ name, email, message }),
+      });
+
+      if (!response.ok) {
+        throw new Error('Error sending message.');
+      }
+
+      setResponseMessage('Message sent successfully!');
+      setName('');
+      setEmail('');
+      setMessage('');
+    } catch (error) {
+      console.error('Error sending message:', error);
+      setResponseMessage('Error sending message.');
     }
-  }
+  };
 
   return (
-    <form onSubmit={submit}>
-      <label>
-        Name
-        <input
-          type="text"
-          id="name"
-          name="name"
-          required
-        />
-      </label>
-      <label>
-        Email
-        <input
-          type="email"
-          id="email"
-          name="email"
-          required
-        />
-      </label>
-      <label>
-        Message
-        <textarea
-          id="message"
-          name="message"
-          required
-        />
-      </label>
-      <button>Send</button>
-      {responseMessage && <p>{responseMessage}</p>}
-    </form>
+    <div className="form">
+      <form>
+        <label>
+          Name
+          <input
+            onClick={() => setResponseMessage('')}
+            type="text"
+            id="name"
+            name="name"
+            value={name}
+            onChange={handleNameChange}
+            required
+          />
+        </label>
+        <label>
+          Email
+          <input
+            onClick={() => setResponseMessage('')}
+            type="email"
+            id="email"
+            name="email"
+            value={email}
+            onChange={handleEmailChange}
+            required
+          />
+        </label>
+        <label>
+          Message
+          <textarea
+            onClick={() => setResponseMessage('')}
+            id="message"
+            name="message"
+            value={message}
+            onChange={handleMessageChange}
+            required
+          />
+        </label>
+        {responseMessage && <p>{responseMessage}</p>}
+      </form>
+      <button
+        className="submit"
+        onClick={handleSendButtonClick}
+      >
+        Send
+      </button>
+    </div>
   );
-}
+};
+
+export default ContactForm;
