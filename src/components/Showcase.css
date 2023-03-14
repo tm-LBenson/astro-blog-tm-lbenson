@@ -10,7 +10,7 @@
   min-height: 300px;
 }
 
-.showcase-demo{
+.showcase-demo {
   width: 100%;
   text-align: center;
 }
@@ -39,14 +39,11 @@
   padding-top: 20px;
   max-width: 1050px;
   margin: auto;
- 
+
   border-radius: 6px;
   text-align: center;
   background-color: beige;
 }
 
-
-
 @media (max-width: 960px) {
 }
-
