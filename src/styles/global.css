@@ -8,7 +8,7 @@
   --color-primary-text-dark: #d8e9a8;
   --color-primary: #eae7b1;
   --color-secondary: #9c9964;
-  --color-primary-text: #61876e;
+  --color-primary-text: #333;
   --color-secondary-text: #fff;
   --color-secondary-text-dark: --color-primary-text-dark;
 
@@ -242,8 +242,10 @@ textarea {
 
 .modal__inner {
   position: absolute;
-  top: 33%;
-  left: 29%;
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
 }
 
 @media (max-width: 500px) {

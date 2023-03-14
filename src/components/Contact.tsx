@@ -1,13 +1,13 @@
 /** @format */
 
 import { useState } from 'react';
-
+import Spinner from './icons/Spinner';
 const ContactForm = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
   const [responseMessage, setResponseMessage] = useState('');
-
+  const [sendingMessage, setSendingMessage] = useState(false);
   const handleNameChange = (event) => {
     setName(event.target.value);
   };
@@ -22,6 +22,7 @@ const ContactForm = () => {
 
   const handleSendButtonClick = async () => {
     try {
+      setSendingMessage(true);
       const response = await fetch(
         'https://astro-server-z1u9.onrender.com/contact',
         {
@@ -37,11 +38,13 @@ const ContactForm = () => {
         throw new Error('Error sending message.');
       }
 
+      setSendingMessage(false);
       setResponseMessage('Message sent successfully!');
       setName('');
       setEmail('');
       setMessage('');
     } catch (error) {
+      setSendingMessage(false);
       console.error('Error sending message:', error);
       setResponseMessage('Error sending message.');
     }
@@ -87,12 +90,16 @@ const ContactForm = () => {
         </label>
         {responseMessage && <p>{responseMessage}</p>}
       </form>
-      <button
-        className="submit"
-        onClick={handleSendButtonClick}
-      >
-        Send
-      </button>
+      {!sendingMessage && (
+        <button
+          className="submit"
+          onClick={handleSendButtonClick}
+        >
+          Send
+        </button>
+      )}
+
+      {sendingMessage && <Spinner />}
     </div>
   );
 };
