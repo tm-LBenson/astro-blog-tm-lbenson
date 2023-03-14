@@ -222,6 +222,30 @@ textarea {
 .submit:hover {
   background-color: #6162ad;
 }
+
+.chat {
+  cursor: pointer;
+  position: fixed;
+  left: 30px;
+  bottom: 30px;
+}
+
+.modal {
+  top: 0;
+  left: 0;
+  position: fixed;
+  background-color: #00000087;
+  width: 100dvw;
+  height: 100dvh;
+  display: flex;
+}
+
+.modal__inner {
+  position: absolute;
+  top: 33%;
+  left: 29%;
+}
+
 @media (max-width: 500px) {
   h1,
   h2 {

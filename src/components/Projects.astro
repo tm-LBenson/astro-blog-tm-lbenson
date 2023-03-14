@@ -7,21 +7,27 @@ import site3 from '../images/site3.png';
 <section>
   <h2>Projects Showcase</h2>
   <div class="project__wrapper">
-    <a href="https://prodigy-path.netlify.app/"
+    <a
+      class="project"
+      href="https://prodigy-path.netlify.app/"
       ><img
         src={site1}
         alt="screenshot of prodigy path"
       /></a
     >
 
-    <a href="https://lewis-benson.io/"
+    <a
+      class="project"
+      href="https://lewis-benson.io/"
       ><img
         src={site2}
         alt="screenshot of blog"
       /></a
     >
 
-    <a href="https://yelp-camp-lewis.cyclic.app/"
+    <a
+      class="project"
+      href="https://yelp-camp-lewis.cyclic.app/"
       ><img
         src={site3}
         alt="screenshot of yelp camp"
@@ -31,6 +37,13 @@ import site3 from '../images/site3.png';
 </section>
 
 <style>
+  .project {
+    transition: all 0.2s ease;
+  }
+  .project:hover {
+    scale: 1.11;
+  }
+
   .project__wrapper {
     display: grid;
     grid-template-columns: repeat(3, 1fr);

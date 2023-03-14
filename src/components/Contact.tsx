@@ -21,18 +21,17 @@ const ContactForm = () => {
   };
 
   const handleSendButtonClick = async () => {
-    // perform submission based on state
-    console.log(`Name: ${name}, Email: ${email}, Message: ${message}`);
-
-    // send POST request to server
     try {
-      const response = await fetch('http://localhost:3002/contact', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
+      const response = await fetch(
+        'https://astro-server-z1u9.onrender.com/contact',
+        {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ name, email, message }),
         },
-        body: JSON.stringify({ name, email, message }),
-      });
+      );
 
       if (!response.ok) {
         throw new Error('Error sending message.');
