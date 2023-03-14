@@ -3,6 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import Showcase from '../components/Showcase.jsx';
 import Features from '../components/Features.astro';
 import Projects from '../components/Projects.astro';
+import RecentBlogs from '../components/RecentBlogs.astro';
 ---
 
 <Layout title="TM-LBenson">
@@ -29,7 +30,9 @@ import Projects from '../components/Projects.astro';
         with the latest trends in web development.
       </p>
       <Projects />
-      <h3>Conta Get in Touch</h3>
+      <h2 class="heading">Recent Blog Articles</h2>
+      <RecentBlogs />
+      <h3>Get in Touch</h3>
       <p>
         Thank you for visiting my website! I love hearing from visitors, so if
         you have any questions, feedback, or just want to say hello, feel free
@@ -41,3 +44,10 @@ import Projects from '../components/Projects.astro';
     </div>
   </section>
 </Layout>
+
+<style>
+  .heading {
+    margin-top: 8rem;
+    padding-top: 8rem;
+  }
+</style>

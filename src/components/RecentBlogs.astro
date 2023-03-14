@@ -1,0 +1,91 @@
+---
+import Card from './Card.astro';
+
+const posts = await Astro.glob('../blogs/*.md');
+---
+
+<section class="page-content">
+  <div class="container blog-posts">
+    {
+      posts.slice(0, 2).map((blog) => {
+        return (
+          <div class="card-blog">
+            <Card>
+              <div
+                style={`background-image: url('./splash/${blog.frontmatter.date.slice(
+                  8,
+                  10,
+                )}.jpg');`}
+                class="blog-title gradient"
+              >
+                <h3>{blog.frontmatter.title}</h3>
+              </div>
+              <div class="card-content">
+                <p class="blog-preview">{blog.frontmatter.excerpt}</p>
+                <a
+                  class="btn"
+                  href={`/${blog.frontmatter.slug}`}
+                >
+                  Read More
+                </a>
+              </div>
+            </Card>
+          </div>
+        );
+      })
+    }
+  </div>
+</section>
+
+<style>
+  .page-content .blog-posts {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
+    margin: auto;
+    margin-top: 5rem;
+    width: 60rem;
+  }
+
+
+
+  .card-blog h3 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 18rem;
+    color: white;
+    background: linear-gradient(
+      rgba(128, 128, 128, 0.324),
+      rgba(0, 0, 0, 0.457)
+    );
+  }
+  .gradient {
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .blog-title {
+    height: 18rem;
+  }
+
+  .card-content {
+    padding: 1rem;
+  }
+
+  .blog-preview {
+    height: 200px;
+  }
+
+  .background-img {
+  }
+  @media (max-width: 1200px) {
+    .page-content .blog-posts {
+      grid-template-columns: 1fr;
+      margin: auto;
+    }
+    .page-content {
+      display: flex;
+    }
+  }
+</style>
