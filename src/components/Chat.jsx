@@ -7,9 +7,11 @@ export default function Chat() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [bodyOverflow, setBodyOverflow] = useState('');
 
-  const handleChatClick = () => {
+  const handleChatClick = async () => {
     setIsModalOpen(true);
     setBodyOverflow('hidden');
+   await fetch('https://astro-server-z1u9.onrender.com/');
+
   };
 
   useEffect(() => {
