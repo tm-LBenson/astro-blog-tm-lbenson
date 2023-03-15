@@ -12,7 +12,7 @@ export default function Showcase() {
     const options = {
       strings: [
         'Web Developer',
-        'Welcome to my blog.',
+        'Welcome to my portfolio and blog!',
         'I hope you find value in the content shared on this site.',
       ],
       typeSpeed: 70,
