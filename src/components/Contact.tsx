@@ -21,6 +21,27 @@ const ContactForm = () => {
   };
 
   const handleSendButtonClick = async () => {
+    const emailValidationPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (!emailValidationPattern.test(email)) {
+      setResponseMessage('Please enter a valid email address.');
+      return;
+    }
+
+    if (name.length < 1) {
+      setResponseMessage(
+        'Please tell me your name so I know what to call you!',
+      );
+      return;
+    }
+
+    if (message.length < 1) {
+      setResponseMessage(
+        'You should include a message, feel free to just say Hi!',
+      );
+      return;
+    }
+
     try {
       setSendingMessage(true);
       const response = await fetch(
@@ -53,8 +74,11 @@ const ContactForm = () => {
   return (
     <div className="form">
       <legend>
-        Send me a message! <br /> Messages in this form will go directly to my
-        email.
+        <strong>
+          Send me a message! <br /> Messages in this form will go directly to my
+          email.
+        </strong>
+        <br />
       </legend>
       <form>
         <label>
