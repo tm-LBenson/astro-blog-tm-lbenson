@@ -52,6 +52,10 @@ const ContactForm = () => {
 
   return (
     <div className="form">
+      <legend>
+        Send me a message! <br /> Messages in this form will go directly to my
+        email.
+      </legend>
       <form>
         <label>
           Name
