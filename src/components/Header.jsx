@@ -2,7 +2,7 @@
 
 import logo from '../images/logo.png';
 import DarkModeIcon from './icons/DarkModeIcon.jsx';
-
+import { analytics } from './analytics';
 import React, { useEffect, useState } from 'react';
 import './Header.css';
 import MoonSun from './MoonSun';
@@ -30,50 +30,7 @@ export default function Header() {
     }
   };
   useEffect(() => {
-    const sendDataToServer = async (siteName) => {
-      try {
-        // Collect the necessary data
-        const data = {
-          siteName,
-          date: new Date().toISOString(),
-          screenSize: {
-            width: window.innerWidth,
-            height: window.innerHeight,
-          },
-          deviceType:
-            /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
-              navigator.userAgent,
-            )
-              ? 'mobile'
-              : 'desktop',
-          ipAddress: await fetch('https://api.ipify.org?format=json')
-            .then((res) => res.json())
-            .then((data) => data.ip),
-        };
-        console.log(data);
-        // Send the data to the server
-        const response = await fetch(
-          'https://astro-server-z1u9.onrender.com/traffic-data',
-          {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(data),
-          },
-        );
-
-        // Check if the request was successful
-        if (!response.ok) {
-          throw new Error(
-            `Error sending data to the server: ${response.statusText}`,
-          );
-        }
-      } catch (error) {
-        console.error(error);
-      }
-    };
-    sendDataToServer('Astro Portfolio');
+    analytics('Astro Portfolio');
   }, []);
 
   useEffect(() => {
