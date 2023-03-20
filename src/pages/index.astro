@@ -4,8 +4,7 @@ import Showcase from '../components/Showcase.jsx';
 import Features from '../components/Features.astro';
 import Projects from '../components/Projects.astro';
 import RecentBlogs from '../components/RecentBlogs.astro';
-
-
+import About from '../components/About.astro';
 ---
 
 <Layout title="TM-LBenson">
@@ -31,7 +30,12 @@ import RecentBlogs from '../components/RecentBlogs.astro';
         different web frameworks and libraries has enabled me to stay up-to-date
         with the latest trends in web development.
       </p>
-      <Projects />
+      <section class="projects">
+        <Projects />
+      </section>
+      <section class="about">
+        <About />
+      </section>
       <h2 class="heading">Recent Blog Articles</h2>
       <RecentBlogs />
       <h3>Get in Touch</h3>
@@ -51,5 +55,11 @@ import RecentBlogs from '../components/RecentBlogs.astro';
   .heading {
     margin-top: 8rem;
     padding-top: 8rem;
+  }
+  .projects {
+    margin-top: 15rem;
+  }
+  .about {
+    margin-top: 15rem;
   }
 </style>
