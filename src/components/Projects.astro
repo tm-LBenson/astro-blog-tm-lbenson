@@ -1,73 +1,125 @@
 ---
+export interface Props {
+  dark?: boolean;
+}
 import site1 from '../images/site1.png';
 import site2 from '../images/site2.png';
 import site3 from '../images/site3.png';
 import site4 from '../images/site4.png';
 import site5 from '../images/site5.png';
 import site6 from '../images/site6.png';
+const { dark = false } = Astro.props as Props;
 ---
 
 <section>
   <h2>Projects Showcase</h2>
   <div class="project__wrapper">
     <a
-      class="project"
+      class={`project card ${dark && 'dark'}`}
       href="https://prodigy-path.netlify.app/"
       ><img
         src={site2}
         alt="screenshot of prodigy path"
-      /></a
-    >
+      />
+      <ul>
+        <li>Cutting-edge social media platform</li>
+        <li>Technologies: React, Redux, Express, MongoDB, Node.js</li>
+        <li>Real-time communication using socket.io</li>
 
+        <li>Test account: Username - JSMentor; Password - pass</li>
+      </ul>
+    </a>
     <a
-      class="project"
+      class={`project card ${dark && 'dark'}`}
       href="https://hexo-lbenson-blog.netlify.app"
       ><img
         src={site1}
         alt="screenshot of blog"
-      /></a
-    >
+      />
+      <ul>
+        <li>Inaugural blog site built with Hexo and JavaScript</li>
+        <li>Chronicles journey through Code Fellows</li>
+        <li>
+          Articles on data structures, algorithms, and professional growth
+        </li>
+      </ul>
+    </a>
 
     <a
-      class="project"
+      class={`project card ${dark && 'dark'}`}
       href="https://yelp-camp-lewis.cyclic.app/"
       ><img
         src={site3}
         alt="screenshot of yelp camp"
-      /></a
-    >
-
+      />
+      <ul>
+        <li>Technologies: Express, Node, MongoDB, EJS, JavaScript</li>
+        <li>Mapbox API integration for visualizing campsites</li>
+        <li>Fully RESTful API with access control and CRUD functionality</li>
+        <li>Image storage and updates via dedicated API</li>
+      </ul>
+    </a>
     <a
-      class="project"
+      class={`project card ${dark && 'dark'}`}
       href="https://tune-port.netlify.app/"
       ><img
         src={site4}
         alt="screenshot of tune port"
-      /></a
-    >
-
+      />
+      <ul>
+        <li>Enhances Spotify experience using Spotify's API</li>
+        <li>Technologies: React, Redux, Express</li>
+        <li>Custom recommendations and playlist management</li>
+        <li>Backend powered by Express for smooth user experience</li>
+      </ul>
+    </a>
     <a
-      class="project"
+      class={`project card ${dark && 'dark'}`}
       href="https://tm-lbenson.github.io/guessAnumber/"
       ><img
         src={site5}
         alt="screenshot of guess a number"
-      /></a
-    >
+      />
+
+      <ul>
+        <li>Retro 8-bit style number guessing game</li>
+        <li>Progressively challenging gameplay</li>
+        <li>Local storage for tracking high scores</li>
+      </ul>
+    </a>
     <a
-      class="project"
+      class={`project card ${dark && 'dark'}`}
       href="https://react-simple-project.github.io/react-expense-app/"
       ><img
         src={site6}
         alt="screenshot of an expense app"
-      /></a
-    >
+      />
+      <ul>
+        <li>Practical and user-friendly React app</li>
+        <li>Expense tracking and visualization</li>
+        <li>Intuitive interface for managing personal finances</li>
+      </ul>
+    </a>
   </div>
 </section>
 
 <style>
   .project {
+    padding: 2rem;
     transition: all 0.2s ease;
+    border-radius: 10px;
+  }
+  .project > img {
+    padding: 2rem;
+
+    object-fit: cover;
+    height: 20rem;
+    border-radius: 10px;
+  }
+  .project > ul {
+    padding: 2rem;
+    list-style: disc;
+    font-size: 1.3rem;
   }
   .project:hover {
     scale: 1.11;
@@ -75,7 +127,7 @@ import site6 from '../images/site6.png';
 
   .project__wrapper {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 26px;
   }
   .project__wrapper a,
@@ -85,5 +137,16 @@ import site6 from '../images/site6.png';
     width: 100%;
     height: 100%;
     cursor: pointer;
+  }
+  .card {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+  }
+
+  .dark {
+    background: var(--color-primary);
   }
 </style>
