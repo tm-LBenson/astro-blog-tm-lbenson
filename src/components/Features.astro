@@ -3,15 +3,15 @@ import Card from './Card.astro';
 const featuresData = [
   {
     title: 'Create',
-    body: "Creating a website is about more than just coding. It's about understanding the needs of your users, and using your technical skills to bring their vision to life. With the right tools and mindset, you can create websites that stand out and deliver real value to your audience.",
+    body: 'Creating a website goes beyond coding. It involves understanding user needs and utilizing technical skills to make their vision a reality. With the right tools and mindset, craft websites that stand out, delivering true value to your audience.',
   },
   {
     title: 'Innovate',
-    body: "Innovation is the key to staying ahead in the web development industry. By embracing new technologies, experimenting with different design concepts, and pushing the boundaries of what's possible, you can create websites that are truly unique and user-friendly.",
+    body: 'Staying ahead in web development requires innovation. Embrace new technologies, experiment with diverse design concepts, and push boundaries to build websites that are truly unique, user-friendly, and ahead of the curve.',
   },
   {
     title: 'Captivate',
-    body: "Captivating website design is all about creating an engaging user experience. Whether it's through visually stunning graphics, intuitive navigation, or interactive elements, a captivating website draws in users and keeps them coming back for more.",
+    body: 'Captivating website design focuses on an engaging user experience. By incorporating visually stunning graphics, intuitive navigation, and interactive elements, create a captivating website that draws users in and keeps them returning for more.',
   },
 ];
 ---
@@ -23,7 +23,7 @@ const featuresData = [
         <div class="grow">
           <Card>
             <h3>{item.title}</h3>
-            <p>{item.body}</p>
+            <p class="body">{item.body}</p>
           </Card>
         </div>
       ))
@@ -35,7 +35,9 @@ const featuresData = [
   .grow {
     transition: all 0.2s ease-in-out;
   }
-
+  .body {
+    height: 16rem;
+  }
   .grow:hover {
     transform: scale(1.1);
   }
@@ -50,6 +52,14 @@ const featuresData = [
   @media (max-width: 1200px) {
     .features .container {
       grid-template-columns: 1fr;
+    }
+    .body {
+      height: auto;
+      width: 80%;
+    }
+    .grow {
+      margin: auto;
+      width: 60%;
     }
   }
 </style>
