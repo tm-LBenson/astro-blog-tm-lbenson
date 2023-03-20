@@ -2,6 +2,8 @@
 
 import { useState } from 'react';
 import Spinner from './icons/Spinner';
+import '../styles/cardStyles.css';
+
 const ContactForm = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
@@ -72,7 +74,7 @@ const ContactForm = () => {
   };
 
   return (
-    <div className="form">
+    <div className="form card">
       <legend>
         <strong>
           Send me a message! <br /> Messages in this form will go directly to my
