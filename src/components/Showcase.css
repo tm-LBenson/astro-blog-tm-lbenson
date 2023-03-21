@@ -44,6 +44,9 @@
   text-align: center;
   background-color: beige;
 }
+.profile-pic {
+  border-radius: 50px;
+}
 
 @media (max-width: 960px) {
 }

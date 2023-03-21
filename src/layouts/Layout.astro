@@ -42,9 +42,11 @@ const { title = 'TM-LBenson' } = Astro.props as Props;
 
   <body>
     <Header client:load />
+
     <slot />
 
     <Footer />
     <Chat client:load />
   </body>
 </html>
+
