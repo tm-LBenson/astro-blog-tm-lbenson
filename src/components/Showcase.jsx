@@ -37,7 +37,7 @@ export default function Showcase() {
         <div className="showcase-text">
           <div className="wrap">
             <img
-              class="profile-pic"
+              className="profile-pic"
               src="https://avatars.githubusercontent.com/u/105423307?s=180&v=4"
               alt="Lewis Benson"
             />
