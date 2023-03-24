@@ -2,12 +2,12 @@
 
 import logo from '../images/logo.png';
 import DarkModeIcon from './icons/DarkModeIcon.jsx';
-import { analytics } from './analytics';
 import React, { useEffect, useState } from 'react';
 import './Header.css';
 import MoonSun from './MoonSun';
 import { Icon } from '@iconify/react';
 import NavDrawer from './NavDrawer';
+
 import { useMediaQuery } from 'react-responsive';
 export default function Header() {
   const [icon, setIcon] = useState(false);
@@ -29,9 +29,6 @@ export default function Header() {
       setIsDarkModeEnabled(true);
     }
   };
-  useEffect(() => {
-    analytics('Astro Portfolio');
-  }, []);
 
   useEffect(() => {
     const body = document.querySelector('body');
