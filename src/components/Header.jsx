@@ -7,6 +7,7 @@ import './Header.css';
 import MoonSun from './MoonSun';
 import { Icon } from '@iconify/react';
 import NavDrawer from './NavDrawer';
+import { analytics } from 'analytics-benson';
 
 import { useMediaQuery } from 'react-responsive';
 export default function Header() {
@@ -29,7 +30,10 @@ export default function Header() {
       setIsDarkModeEnabled(true);
     }
   };
-
+  useEffect(() => {
+    console.log('sending');
+    analytics('Astro Portfolio', 'd526e49d-cc0f-468f-b04d-f59e21f6365a');
+  }, []);
   useEffect(() => {
     const body = document.querySelector('body');
     isDarkModeEnabled
