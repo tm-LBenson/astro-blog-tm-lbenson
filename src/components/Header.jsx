@@ -7,7 +7,7 @@ import './Header.css';
 import MoonSun from './MoonSun';
 import { Icon } from '@iconify/react';
 import NavDrawer from './NavDrawer';
-import { analytics } from 'analytics-benson';
+import analytics  from 'analytics-benson';
 
 import { useMediaQuery } from 'react-responsive';
 export default function Header() {
