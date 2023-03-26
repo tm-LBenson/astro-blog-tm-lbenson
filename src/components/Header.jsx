@@ -31,7 +31,6 @@ export default function Header() {
     }
   };
   useEffect(() => {
-    console.log('sending');
     analytics('Astro Portfolio', 'd526e49d-cc0f-468f-b04d-f59e21f6365a');
   }, []);
   useEffect(() => {
