@@ -8,6 +8,7 @@ import site3 from '../images/site3.png';
 import site4 from '../images/site4.png';
 import site5 from '../images/site5.png';
 import site6 from '../images/site6.png';
+import site7 from '../images/site7.png';
 const { dark = false } = Astro.props as Props;
 ---
 
@@ -98,6 +99,19 @@ const { dark = false } = Astro.props as Props;
         <li>Practical and user-friendly React app</li>
         <li>Expense tracking and visualization</li>
         <li>Intuitive interface for managing personal finances</li>
+      </ul>
+    </a>
+    <a
+      class={`project card ${dark && 'dark'}`}
+      href="https://analytics-benson.netlify.app/"
+      ><img
+        src={site7}
+        alt="screenshot of an analytics app"
+      />
+      <ul>
+        <li>Easy-to-install custom NPM package</li>
+        <li>Insightful web analytics for informed decision-making</li>
+        <li>Visual data representation with graphs and maps for clarity</li>
       </ul>
     </a>
   </div>
