@@ -40,6 +40,7 @@ For building the project for production, run `npm run build` or `yarn build`. Th
 
 If you have any suggestions, feedback, or would like to contribute to the project, please feel free to open an issue or submit a pull request.
 
+
 ## License
 
 This project is licensed under the terms of the MIT license. See the LICENSE file for more information.
