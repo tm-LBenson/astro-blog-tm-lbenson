@@ -1,52 +1,45 @@
-<!-- @format -->
+# Lewis Benson's Web Development Portfolio and Blog
 
-# TM-LBenson Blog
+Welcome to my web development portfolio and blog, built using the Astro framework and written in TypeScript. The blog posts are written in Markdown.
 
-This is a blog built using the Astro framework and written in TypeScript. The blog posts are written in Markdown.
+## Table of Contents
+
+- [Introduction](#introduction)
+- [Features](#features)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Contributing](#contributing)
+- [License](#license)
+
+## Introduction
+
+This project serves as both a showcase of my web development skills and a platform to share my thoughts and experiences in the industry. The responsive design ensures optimal viewing on any device, and the dark mode toggle enhances readability in different lighting conditions.
 
 ## Features
 
-- [x] Responsive design for optimal viewing on any device
-- [x] Dark mode toggle for easy reading at night
-- [x] Fun animation when switching between light and dark mode
-- [x] Blog preview using cards
-- [x] Scrolling Text
+- Responsive design for optimal viewing on any device
+- Dark mode toggle for easy reading at night
+- Fun animation when switching between light and dark mode
+- Blog preview using cards
+- Scrolling text
 
-## Future Plans
-Make the page fully responsive
-Add github stats
-Make it rain in the section with skills all the icons
-I am constantly working on improving the site and adding new features. Some things I have planned for the future include:
-Add 3 most recent blog posts to main page with a link to view all [reference](https://www.a11ywithlindsey.com/)
-have the header slower drop into the page on page load [reference](https://www.adhamdannaway.com/blog)
-Improved search functionality for finding specific posts
-Integration with social media platforms for easy sharing
-Navigation drawer for mobile screen sizes
-Updated content in the about page
-Dynamic tech news using an API (considering a separate project for this)
-Deployment on Netlify
-Add profile pic to about page
-Consider adding a pitch video
-Comment system
-Contact Form that sends an email without the user having to use their own email system[reference](https://olaolu.dev/)
+## Installation
 
+To run this project locally, follow these steps:
 
-## Running locally
+1. Clone the repository
+2. Install dependencies by running `npm install` or `yarn install`
 
-Clone the repository
+## Usage
 
-Install dependencies: npm install or yarn install
-Start the development server: npm run dev or yarn dev
-Open http://localhost:3000 in your browser
-Building for production
-Build the project: npm run build or yarn build
-The built files will be in the build directory
-Deployment
-To deploy the blog, you can use a static site hosting service such as Netlify. Simply connect your Netlify account to your Git repository and configure the build settings to use the build directory as the publish directory.
+To start the development server, run `npm run dev` or `yarn dev`. Open http://localhost:3000 in your browser to view the site.
 
-## Conclusion
+For building the project for production, run `npm run build` or `yarn build`. The built files will be in the `build` directory.
 
-Thank you for visiting my site. I hope you enjoy reading my blogs and using the features on the site. If you have any suggestions or feedback, please don't hesitate to reach out to me.
+## Contributing
+
+If you have any suggestions, feedback, or would like to contribute to the project, please feel free to open an issue or submit a pull request.
+
 
 ## License
 
