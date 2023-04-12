@@ -55,7 +55,8 @@ This rule tells Netlify to serve the `index.htm`l file with a `200` status code 
 
 Save the `_redirects` file and deploy your app to Netlify. Make sure the `_redirects` file is included in the build output, so Netlify can read and apply the custom routing rules.
 
-![file structure and whats inside the file](https://user-images.githubusercontent.com/105423307/231568961-ac2af906-602c-4ff3-9f99-da7264b7a023.png)
+<img src="https://user-images.githubusercontent.com/105423307/231568961-ac2af906-602c-4ff3-9f99-da7264b7a023.png" alt="file structure and whats inside the file" style="width: 80%;" />
+
 
 ### Step 4: Additional Setup for Vite (Optional)
 
