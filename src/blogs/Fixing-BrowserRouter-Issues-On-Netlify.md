@@ -1,8 +1,8 @@
 ---
 title: Fixing BrowserRouter Issues on Netlify with _redirects
 date: 2023-04-12
-slug: Fixing-BrowserRouter-Issues-on-Netlify-with-_redirects
-excerpt: Are you having issues deploying your React app on Netlify using BrowserRouter? In this post, we'll discuss a simple fix by adding a _redirects file to your public folder, and why Netlify works this way.
+slug: fixing-browserrouter-issues-on-netlify-with-_redirects
+excerpt: Are you having issues deploying your React app on Netlify using BrowserRouter? In this post, we'll discuss a simple fix by adding a _redirects file to your public folder and why Netlify works this way.
 author: Lewis Benson
 category: Web Development
 tags:
@@ -13,27 +13,27 @@ tags:
   - Web Development
 ---
 
-# Fixing BrowserRouter Issues on Netlify with _redirects
+# Fixing BrowserRouter Issues on Netlify with \_redirects
 
-Are you having issues deploying your React app on Netlify using BrowserRouter? In this post, we'll discuss a simple fix by adding a `_redirects` file to your `public` folder, and why Netlify works this way. We'll also explain how this can be beneficial for your app's deployment.
+Are you having issues deploying your React app on Netlify using BrowserRouter? In this post, we'll discuss a simple fix by adding a `_redirects` file to your `public` folder and why Netlify works this way. We'll also explain how this can benefit your app's deployment.
 
 ## The Issue: BrowserRouter and Netlify
 
 When deploying a React app using BrowserRouter on Netlify, you might encounter unexpected issues with routing. One of the most common symptoms is receiving a 404 error page when trying to access your app's routes, like the one shown below:
 
-![error-netlify](https://user-images.githubusercontent.com/105423307/231568828-3b2acaf8-2594-4a69-a974-766d15bc8c57.png)
+![netlify error message](../images/error-netlify.png)
 
-This error occurs because your app's routes are not recognized by the server, causing it to return a 404 error instead of rendering the desired page. The root of this issue lies in the fact that Netlify's default behavior is to serve static assets only. As a result, client-side routing, which is a key feature of BrowserRouter, is not fully supported out of the box.
+This error occurs because your app's routes are not recognized by the server, causing it to return a 404 error instead of rendering the desired page. The root of this issue lies in the fact that Netlify's default behavior is to serve static assets only. As a result, client-side routing, a key feature of BrowserRouter, is not fully supported out of the box.
 
-BrowserRouter relies on the HTML5 History API, allowing for dynamic and clean URLs without the need for a `#` symbol in the route. However, since Netlify is optimized for serving static files, it doesn't have built-in support for handling client-side routing. When a user requests a route that's not the root path, the server looks for a corresponding file to serve but doesn't find one, leading to the 404 error.
+BrowserRouter relies on the HTML5 History API, allowing for dynamic and clean URLs without needing a `#` symbol in the route. However, since Netlify is optimized for serving static files, it doesn't have built-in support for handling client-side routing. When a user requests a route that's not the root path, the server looks for a corresponding file to serve but doesn't find one, leading to the 404 error.
 
-Understanding this limitation is crucial to finding a solution that allows your React app to function properly on Netlify with client-side routing. In the next section, we'll explore a simple fix to address this issue by adding a `_redirects` file to your app's public folder.
+Understanding this limitation is crucial to finding a solution that allows your React app to function correctly on Netlify with client-side routing. In the next section, we'll explore a simple fix to address this issue by adding a `_redirects` file to your app's public folder.
 
 ## The Solution: Adding \_redirects to the Public Folder
 
 To fix the routing issues when using BrowserRouter in your React app deployed on Netlify, you can use a `_redirects` file. This file allows you to define custom routing rules that will be followed by Netlify when serving your app.
 
-In this section, we'll walk you through the process of creating and configuring the `_redirects` file to resolve the routing issues in your React app.
+In this section, we'll walk you through creating and configuring the `_redirects` file to resolve the routing issues in your React app.
 
 ### Step 1: Create the \_redirects File in the Public Folder
 
@@ -49,13 +49,13 @@ Next, add the following line to the `_redirects` file:
 /* /index.html 200
 ```
 
-This rule tells Netlify to serve the `index.htm`l file with a `200` status code for any route requested by the user, allowing your React app to handle the client-side routing.
+This rule tells Netlify to serve the `index.html` file with a `200` status code for any route requested by the user, allowing your React app to handle the client-side routing.
 
 ### Step 3: Save the File and Deploy
 
-Save the `_redirects` file and deploy your app to Netlify. Make sure the `_redirects` file is included in the build output, so Netlify can read and apply the custom routing rules.
+Save the `_redirects` file and deploy your app to Netlify. Ensure the `_redirects` file is included in the build output so Netlify can read and apply the custom routing rules.
 
-![file structure and whats inside the file](https://user-images.githubusercontent.com/105423307/231568961-ac2af906-602c-4ff3-9f99-da7264b7a023.png)
+![file structure and whats inside the file](../images/redirects-file.png)
 
 ### Step 4: Additional Setup for Vite (Optional)
 
@@ -63,7 +63,7 @@ If you're using Vite, you'll need to perform an additional step to ensure that t
 
 ## Additional Setup for Vite (Optional)
 
-In this section, we will focus on the specific steps required to ensure proper setup of a React app with BrowserRouter routing on Netlify when using Vite as your build tool. By following these instructions, you'll make sure the \_redirects file is included in the dist folder during the build process.
+In this section, we will focus on the steps required to ensure the proper setup of a React app with BrowserRouter routing on Netlify when using Vite as your build tool. By following these instructions, you'll ensure the \_redirects file is included in the dist folder during the build process.
 
 ### Step 1: Install the vite-plugin-copy2 Package
 
@@ -110,11 +110,11 @@ This configuration ensures that the `_redirects` file is copied from the public 
 
 With the configuration in place, build your project using Vite, and deploy the output to Netlify. The `_redirects` file will now be included in the `dist` folder, and the routing issues should be resolved.
 
-By following these steps, you can successfully set up a Vite-based React app with BrowserRouter routing on Netlify.
+Following these steps, you can successfully set up a Vite-based React app with BrowserRouter routing on Netlify.
 
 ## Why Netlify Works This Way: Understanding the Benefits
 
-Netlify's default behavior is designed to optimize the serving of static assets, making the hosting of your web applications fast and efficient. This focus on static assets brings several benefits to your projects:
+Netlify's default behavior is designed to optimize the serving of static assets, making hosting your web applications fast and efficient. This focus on static assets brings several benefits to your projects:
 
 ### Performance
 
@@ -122,18 +122,18 @@ By serving pre-built static assets, Netlify can quickly deliver content to users
 
 ### Security
 
-Static sites are inherently more secure than dynamic sites, as there's no server-side processing or database connections involved. This reduces the number of potential attack vectors, making it more challenging for malicious actors to exploit vulnerabilities.
+Static sites are inherently more secure than dynamic sites, as there are no server-side processing or database connections involved. This reduces the number of potential attack vectors, making it more challenging for malicious actors to exploit vulnerabilities.
 
 ### Simplicity
 
-Netlify simplifies the deployment process for developers by automating many tasks associated with hosting and managing a website. This makes it easy to get your project up and running quickly, even if you don't have extensive experience with web hosting.
+Netlify simplifies the deployment process for developers by automating many tasks associated with hosting and managing a website. This makes it easy to get your project up and running quickly, even if you have limited experience with web hosting.
 
-While Netlify's default behavior may require some additional configuration to fully support client-side routing with libraries like React, it's a minor trade-off when considering the benefits provided by Netlify's approach. By making a few small adjustments, like adding a `_redirect`s file, you can enjoy the advantages of Netlify's hosting platform while still leveraging the power of client-side routing in your React apps.
+While Netlify's default behavior may require some additional configuration to support client-side routing with libraries like React entirely, it's a minor trade-off when considering the benefits provided by Netlify's approach. By making a few minor adjustments, like adding a `\_redirect's file, you can enjoy the advantages of Netlify's hosting platform while still leveraging the power of client-side routing in your React apps.
 
 ## Conclusion
 
-In this blog post, we explored the issue of deploying a React app with BrowserRouter on Netlify, and how to resolve the routing problem by adding a `_redirects` file to your public folder. We also discussed the benefits of Netlify's focus on serving static assets and how it impacts performance, security, and simplicity for your web projects.
+In this blog post, we explored the issue of deploying a React app with BrowserRouter on Netlify and how to resolve the routing problem by adding a `_redirects` file to your public folder. We also discussed the benefits of Netlify's focus on serving static assets and how it impacts your web projects' performance, security, and simplicity.
 
 While additional configuration is required to support client-side routing in React apps deployed on Netlify, the benefits of using Netlify as a hosting platform far outweigh the minor trade-offs. With a simple `_redirects` file and the proper setup, you can enjoy a seamless deployment experience and a performant, secure, and easy-to-manage React app hosted on Netlify.
 
-By understanding the root of the issue and applying the solution outlined in this post, you can now confidently deploy your React app using BrowserRouter on Netlify and enjoy all the advantages this powerful hosting platform has to offer.
+By understanding the root of the issue and applying the solution outlined in this post, you can now confidently deploy your React app using BrowserRouter on Netlify and enjoy all the advantages this powerful hosting platform offers.
