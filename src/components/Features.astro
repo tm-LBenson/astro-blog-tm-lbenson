@@ -33,6 +33,10 @@ const featuresData = [
 
 <style>
   .grow {
+    display: flex;
+    justify-content: center;
+
+    width: 100%;
     transition: all 0.2s ease-in-out;
   }
   .body {
@@ -46,7 +50,6 @@ const featuresData = [
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 28px;
     padding: 0 20px;
-    margin: auto;
   }
 
   @media (max-width: 1200px) {
@@ -58,8 +61,8 @@ const featuresData = [
       width: 80%;
     }
     .grow {
-      margin: auto;
-      width: 60%;
+      margin: 0;
+      width: 100%;
     }
   }
 </style>
