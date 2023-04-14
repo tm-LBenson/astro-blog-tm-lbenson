@@ -73,8 +73,9 @@ h3 {
 }
 
 .container {
+  width: 100%;
   max-width: 1200px;
-  margin: 0 auto;
+  margin: auto;
   padding: 0 30px;
 }
 
@@ -265,5 +266,23 @@ h1 {
   }
   h3 {
     font-size: 130% !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .container {
+    padding: 0 15px;
+  }
+
+  h1 {
+    font-size: 36px;
+  }
+
+  .page-content h2 {
+    font-size: 32px;
+  }
+
+  .page-content h3 {
+    font-size: 28px;
   }
 }

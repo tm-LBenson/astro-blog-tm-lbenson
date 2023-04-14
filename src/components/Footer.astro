@@ -20,11 +20,11 @@ import logo from '../images/logo.png';
       </ul>
     </section>
     <div class="bottom">
-      <section>
+      <section class="copyright">
         <h3>TM-LBenson</h3>
         <p>Copyright {year} Lewis Benson.</p>
       </section>
-      <section>
+      <section class="social">
         <h3>Social</h3>
         <ul class="links">
           <li>
@@ -133,6 +133,7 @@ import logo from '../images/logo.png';
   .bottom {
     width: 100%;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
   }
   .bottom section {
@@ -175,6 +176,7 @@ import logo from '../images/logo.png';
       justify-content: flex-start;
       gap: 6rem;
     }
+
     .footer section {
       display: flex;
       width: 100%;
@@ -182,12 +184,49 @@ import logo from '../images/logo.png';
       justify-content: flex-start;
       margin-left: -100px;
     }
+
     .footer section p {
       min-width: 230px;
     }
+
+    .bottom {
+      flex-direction: column;
+    }
+
+    .bottom section {
+      width: 100%;
+      margin-top: 3rem;
+    }
+
+    .bottom .copyright,
+    .bottom .social {
+      display: flex;
+      justify-content: center;
+    }
+
+    .bottom .social .links {
+      justify-content: center;
+    }
   }
 
-  @media (max-width: 500px) {
+  @media (max-width: 768px) {
+    .bottom section {
+      width: 100%;
+      margin-top: 3rem;
+    }
+
+    .bottom .copyright,
+    .bottom .social {
+      display: flex;
+      justify-content: center;
+    }
+
+    .bottom .social .links {
+      justify-content: center;
+    }
+  }
+
+  @media (max-width: 900px) {
     .bottom section {
       flex-direction: column;
       justify-content: space-around;
@@ -195,15 +234,30 @@ import logo from '../images/logo.png';
     }
 
     .bottom {
-      height: 10rem;
-      flex-direction: column;
+      height: 40rem;
+      flex-direction: column-reverse;
       align-items: center;
       justify-content: space-around;
     }
-    .footer section p,
-    h3 {
-      display: none;
+    .bottom .copyright {
+      margin: 0;
+      margin-left: -80px;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 90dvw;
+      padding-top: 10rem;
+    }
+    .bottom .social .links {
+      height: 10rem;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
     }
 
+    .footer .container .main-links {
+      display: none;
+    }
   }
 </style>
