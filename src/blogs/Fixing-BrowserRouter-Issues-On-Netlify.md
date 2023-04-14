@@ -21,7 +21,8 @@ Are you having issues deploying your React app on Netlify using BrowserRouter? I
 
 When deploying a React app using BrowserRouter on Netlify, you might encounter unexpected issues with routing. One of the most common symptoms is receiving a 404 error page when trying to access your app's routes, like the one shown below:
 
-![error-netlify](https://user-images.githubusercontent.com/105423307/231568828-3b2acaf8-2594-4a69-a974-766d15bc8c57.png)
+
+<img src="https://user-images.githubusercontent.com/105423307/231568828-3b2acaf8-2594-4a69-a974-766d15bc8c57.png" alt="error on netlify" style="width: 80%;" />
 
 This error occurs because your app's routes are not recognized by the server, causing it to return a 404 error instead of rendering the desired page. The root of this issue lies in the fact that Netlify's default behavior is to serve static assets only. As a result, client-side routing, which is a key feature of BrowserRouter, is not fully supported out of the box.
 
