@@ -20,14 +20,14 @@ const { Content, frontmatter } = Astro.props.post;
 
 <Layout title={frontmatter.title}>
   <section class="page-content">
-    <div class="container">
+    <div class="container full-blog">
       <Card>
         <a
           href="/blog"
           class="btn"
           >Go Back</a
         >
-        <h2>{frontmatter.title}</h2>
+        <h1>{frontmatter.title}</h1>
         <Content />
         <section class="blog-details">
           <div>Authors: {frontmatter.author}</div>

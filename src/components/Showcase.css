@@ -50,3 +50,9 @@
 
 @media (max-width: 960px) {
 }
+
+@media (max-width: 500px) {
+  .type-wrap {
+    display: none;
+  }
+}

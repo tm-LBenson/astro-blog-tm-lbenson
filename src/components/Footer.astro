@@ -186,4 +186,25 @@ import logo from '../images/logo.png';
       min-width: 230px;
     }
   }
+
+  @media (max-width: 500px) {
+    .bottom section {
+      flex-direction: column;
+      justify-content: space-around;
+      height: 1rem;
+    }
+
+    .bottom {
+      height: 30rem;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-around;
+    }
+    .footer section p {
+      display: none;
+    }
+    .footer section {
+      position: relative;
+    }
+  }
 </style>

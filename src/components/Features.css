@@ -13,3 +13,10 @@
 .blog-card {
   width: 25%;
 }
+
+@media (max-width: 500px) {
+  .bottom {
+    display: flex;
+    flex-direction: column;
+  }
+}

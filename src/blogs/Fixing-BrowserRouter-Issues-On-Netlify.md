@@ -13,8 +13,6 @@ tags:
   - Web Development
 ---
 
-# Fixing BrowserRouter Issues on Netlify with \_redirects
-
 Are you having issues deploying your React app on Netlify using BrowserRouter? In this post, we'll discuss a simple fix by adding a `_redirects` file to your `public` folder and why Netlify works this way. We'll also explain how this can benefit your app's deployment.
 
 ## The Issue: BrowserRouter and Netlify

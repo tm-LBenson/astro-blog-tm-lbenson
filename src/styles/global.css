@@ -248,9 +248,22 @@ textarea {
   transform: translate(-50%, -50%);
 }
 
+h1 {
+  font-size: 55px;
+}
+
 @media (max-width: 500px) {
   h1,
   h2 {
     text-align: center;
+  }
+  h1 {
+    font-size: 170%;
+  }
+  h2 {
+    font-size: 150% !important;
+  }
+  h3 {
+    font-size: 130% !important;
   }
 }

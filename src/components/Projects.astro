@@ -163,4 +163,10 @@ const { dark = false } = Astro.props as Props;
   .dark {
     background: var(--color-primary);
   }
+
+  @media (max-width: 500px) {
+    .project__wrapper {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
 </style>
