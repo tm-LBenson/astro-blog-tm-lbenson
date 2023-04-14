@@ -9,3 +9,12 @@
 .dark {
   background: var(--color-primary);
 }
+
+@media (max-width: 500px) {
+  .card {
+    width: 90dvw !important;
+  }
+  .container {
+ 
+  }
+}
